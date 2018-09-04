@@ -1,0 +1,178 @@
+body{
+    
+    font-family: "Georgia", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    background-color:antiquewhite;
+    font-size: 15px;
+    line-height: 1.5;
+    color: dimgray;
+    text-align: center;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow: hidden;
+}
+
+header{
+    background-color: rosybrown;
+    color: navajowhite;
+    border-bottom: saddlebrown 3px solid;
+}
+
+header h1{
+    float: left;
+    margin-top: 15px;
+}
+
+nav{
+    float: right;
+    margin-top: 10px;
+}
+
+header li{
+    display: inline;
+    margin: 10px;
+    font-size: 20px;
+}
+
+header a{
+    text-decoration: none;
+    color: rgb(224, 233, 140);
+    text-transform: uppercase;
+}
+
+#showcase{
+    background: url(banner300.jpg) repeat-x;
+    min-height: 250px;
+    max-height: 300px;
+}
+
+footer{
+    background-color: saddlebrown;
+    color: rgb(224, 233, 140);
+    text-align: center;
+    border-top: rosybrown 3px solid;
+}
+footer a{
+    text-decoration: underline;
+    color: rgb(224, 233, 140);
+}
+footer li{
+    display: inline;
+    list-style: none;
+    padding:0 20px 0 20px;
+}
+
+h2{
+    color: black;
+    margin-bottom: 50px;
+}
+
+.anml {
+  float: left;
+  width: 33.33%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  height: 450px;
+  padding: 5px;
+}
+
+
+img { 
+   border: 5px solid saddlebrown;
+}
+
+.highlight{
+    color: lightsalmon;
+}
+
+a:hover{
+    font-weight: bold;
+    color: white;
+}
+
+
+#main{
+    text-align: left;
+}
+
+.parallax { 
+    background-image: url("peek.png");
+
+
+    height: 550px; 
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+}
+
+#sidebar1{
+    float: left;
+    width:15%;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-top:10px;
+}
+
+#sidebar2{
+    float: left;
+    width:15%;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-top:10px;
+}
+#sidebar3{
+    float: left;
+    width:15%;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-top:10px;
+}
+
+.dark{
+    padding: 15px;
+    background: darkred;
+    color: white;
+    margin-top: 15px;
+    margin-bottom:10px;
+    font-size: 40px;
+}
+
+#main li{
+    list-style: none;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+@media(max-width: 770px){
+        header h1, nav{
+            float:none;
+            text-align: center;
+            width:100%;
+        }
+        header ul{
+            margin:0px;
+            padding:0px;
+        }
+    }
+    
+    .brightness {
+    background-color: antiquewhite;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .5;
+}

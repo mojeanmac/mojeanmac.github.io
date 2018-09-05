@@ -78,13 +78,16 @@ h2{
   content: "";
   clear: both;
   display: table;
+  text-align: center;
+  
 }
 
 .column {
-  float: left;
   width: 20%;
-  height: 450px;
-  padding: 5px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
 }
 
 
@@ -175,4 +178,8 @@ a:hover{
 }
 .brightness img:hover {
     opacity: .5;
+}
+
+#portfolio{
+    padding: 40px;
 }

@@ -6,6 +6,7 @@ body{
     line-height: 1.5;
     color: dimgray;
     text-align: center;
+    margin: 0px;
 }
 
 .container{
@@ -96,8 +97,9 @@ h2{
 }
 
 
-img not:portfolio{ 
+img{ 
    border: 5px solid saddlebrown;
+   border-style: double;
 }
 
 .highlight{
@@ -187,4 +189,8 @@ a:hover{
 
 #portfolio{
     padding: 40px;
+}
+
+#portfolio img:first-child{
+    border:none;
 }

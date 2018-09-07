@@ -90,8 +90,13 @@ h2{
   display: inline-block;
 }
 
+.column2 {
+    float: left;
+    width: 50%;
+}
 
-img { 
+
+img not:portfolio{ 
    border: 5px solid saddlebrown;
 }
 
@@ -113,7 +118,7 @@ a:hover{
     background-image: url("peek.png");
 
 
-    height: 550px; 
+    height: 400px; 
 
     background-attachment: fixed;
     background-position: center;
@@ -123,7 +128,7 @@ a:hover{
 
 #sidebar1{
     float: left;
-    width:15%;
+    width:16%;
     margin-bottom: 40px;
     margin-left: 20px;
     margin-top:10px;
@@ -131,14 +136,14 @@ a:hover{
 
 #sidebar2{
     float: left;
-    width:15%;
+    width: 16%;
     margin-bottom: 40px;
     margin-left: 20px;
     margin-top:10px;
 }
 #sidebar3{
     float: left;
-    width:15%;
+    width:17%;
     margin-bottom: 40px;
     margin-left: 20px;
     margin-top:10px;

@@ -2,7 +2,6 @@
 <html>
 
     <head>
-        
         <link rel = "stylesheet" href = "webStyle.css">
         <title>Animal Shelter</title>
         <meta charset = "utf-8">
@@ -10,13 +9,18 @@
         <meta name = "author" content = "Molly MacLaren">
         
         <link rel="shortcut icon" type="image/x-icon" href="icon.png">
-    
+        
+        <link rel="stylesheet" href="blockrain.css">
+        
+        <!-- jQuery and Blockrain.js -->
+        <script src="jquery.js"></script>
+        <script src="blockrain.js"></script>
+        </div>
     </head>
     
     <body>
         <header>
             
-            <!--HEADER ENDS HERE-->
             
         <div class = "container">
             
@@ -84,6 +88,10 @@
             <iframe width="512" height="288" src="https://www.youtube.com/embed/mDOHOCf079E"></iframe>
             <h1>Cannon Blast Game</h1>
             <p class="bottom-three">Tida Ngov and I made a game using projectile motion where you shoot targets in the sky.</p>
+            
+            <iframe width="400" height="300" src="https://www.youtube.com/embed/fvWsKPxbdmg"></iframe>
+            <h1>Cat Pong</h1>
+            <p class="bottom-three">Another game made partially collaboratively with Tida for the AP CSP test.</p>
         </div>
         
         <!--bout me-->
@@ -92,7 +100,10 @@
             <p>I am a Sophmore at Granada High School.</p><p> I made this website inspired by the <a href = "http://www.scp-wiki.net/" target="_blank"><span class= "highlight">SCP Foundation</span></a> and the <a href = "https://valleyhumane.org" target="_blank"><span class= "highlight">Valley Humane Society</span></a>.</p>
             <iframe width="420" height="315" src="https://www.youtube.com/embed/KB1WaV2xdHw"></iframe>
             <p>I like to go on runs and play on my computer. </br>My favorite games are Nier: Automata, DOOM 2016, and Fallout: New Vegas.</p>
-        </div>
+            <div class="game" style="width:250px; height:500px;"></div>
+             <script>
+            $('.game').blockrain();
+            </script>
         </div>
         </section>
     </body>

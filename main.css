@@ -1,0 +1,47 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-image: radial-gradient(circle at 100%, #B25068 30%, #774360 74.95%, #4C3A51 75%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+.lilypad {
+    background-color: #e79c60;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px;
+    width: 500px;
+    box-shadow: 10px 10px white;
+}
+header {
+    float: left;
+}
+.links a {
+    color: white;
+    margin: 20px;
+    font-size: 24px;
+}
+.links svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+}
+.links svg:hover {
+    fill: black;
+  }
+.title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+    margin: 10px;
+}
+.logo {
+    margin-right: 20px;
+}
+

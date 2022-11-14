@@ -61,4 +61,10 @@ header {
     display: grid;
     flex:auto;
 }
-
+a {
+    color:white;
+    font-size: 24px;
+}
+a:hover {
+    color:black
+}

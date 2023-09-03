@@ -45,7 +45,6 @@ a:active{
 }
 #links svg:hover {
     fill: pink;
-    width: 50px;
 }
 
 .box {

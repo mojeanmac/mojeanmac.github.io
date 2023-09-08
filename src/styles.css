@@ -1,72 +1,16 @@
 body {
-    background-image: url("/src/img/background.png");
+    background-image: url("/src/img/background2.png");
     background-repeat: repeat;
     color: white;
     font-family: 'Open Sans', sans-serif;
 }
-a{
-    color: pink;
-    text-decoration: none;
-}
-#navbar {
-    position: sticky;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
-    padding: 10px;
-    margin: -10px;
-}
-#nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 30%;
-    font-size: 14pt;
-}
-#nav a {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
-    border-radius: 10px;
-    padding: 10px;
-}
-#nav a:hover{
-    background-color: rgba(125, 125, 125, 0.6);
-}
-a:active{
-    color: white;
-}
-
-#links{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-#links svg {
-    fill: white;
-    margin: 0px 10px 10px;
-}
-#links svg:hover {
-    fill: pink;
-}
-
-.box {
-    display: flex;
-    justify-content: center;
-    width: 30%;
-    margin: auto;
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
-    border-radius: 40px 10px 10px 10px;
-    border: none;
-}
-#desc {
-    width: 50%;
-    height: 90%;
-    padding: 10px 10px 10px 40px;
-}
-
 h1 {
     font-family: 'Source Code Pro', monospace;
     font-size: 32pt;
+}
+h2 {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20pt;
 }
 #name {
     flex-direction: column;
@@ -74,4 +18,72 @@ h1 {
 }
 p {
     font-size: 14pt;
+}
+a{
+    color: pink;
+    text-decoration: none;
+}
+#navbar {
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(8px);
+    padding: 10px;
+    margin: -10px;
+}
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    font-size: 14pt;
+}
+#nav a {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 10px;
+}
+#nav #home{
+    padding: 0px;
+}
+#nav a:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+a:active{
+    color: white;
+}
+
+#svglinks{
+    display: flex;
+    justify-content: center;
+}
+#svglinks svg {
+    fill: white;
+    margin: 0px 10px 10px;
+}
+#svglinks svg:hover {
+    fill: rgba(0, 0, 0, 0.5);
+}
+.box {
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-radius: 40px 10px 10px 10px;
+    border: none;
+    text-align: center;
+    padding: 10px;
+}
+.box .button a{
+    font-size: 14pt;
+}
+.box .button a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#desc {
+    padding: 10px 20px;
+    width: 700px
+}
+#research {
+    display: flex;
+    justify-content: space-evenly;
 }

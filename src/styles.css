@@ -1,6 +1,8 @@
 body {
     background-image: url("/src/img/background2.png");
     background-repeat: repeat;
+    background-size: 130%;
+    overflow: hidden;
     color: white;
     font-family: 'Open Sans', sans-serif;
 }
@@ -22,6 +24,11 @@ p {
 a{
     color: pink;
     text-decoration: none;
+}
+@media screen and (max-width:900px) {
+    #research {
+        flex-direction: column;
+    }
 }
 #navbar {
     position: sticky;
@@ -51,6 +58,18 @@ a:active{
     color: white;
 }
 
+#meow {
+    position: absolute;
+    width: 300px;
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin: auto;
+}
+
 #svglinks{
     display: flex;
     justify-content: center;
@@ -62,8 +81,15 @@ a:active{
 #svglinks svg:hover {
     fill: rgba(0, 0, 0, 0.5);
 }
+#cv {
+    width: 100px;
+    font-size: 20pt;
+    border-radius: 10px;
+    font-family: 'Source Code Pro', monospace;
+    float: right;
+}
 .box {
-    width: 500px;
+    width: 450px;
     margin: auto;
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -71,17 +97,13 @@ a:active{
     border-radius: 40px 10px 10px 10px;
     border: none;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
-.box .button a{
+.box.button{
     font-size: 14pt;
 }
-.box .button a:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-#desc {
-    padding: 10px 20px;
-    width: 700px
+.box.button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 #research {
     display: flex;

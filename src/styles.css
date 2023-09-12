@@ -1,37 +1,51 @@
 body {
     background-image: url("/src/img/background2.png");
     background-repeat: repeat;
-    background-size: 130%;
-    overflow: hidden;
+    background-size: 120%;
+    background-color: black;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Rubik', sans-serif;
 }
 h1 {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 32pt;
+    font-size: 34pt;
 }
 h2 {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 20pt;
+    font-size: 24pt;
 }
-#name {
-    flex-direction: column;
-    align-items: center;
+h3 {
+    font-size: 22pt;
+}
+h4 {
+    font-size: 18pt;
 }
 p {
     font-size: 14pt;
 }
 a{
-    color: pink;
+    color: skyblue;
     text-decoration: none;
 }
 @media screen and (max-width:1000px) {
-    #research {
+    .rows {
         flex-direction: column;
     }
     .box {
-        width: 300px;
+        width: 90%;
     }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+#name h1, h4 {
+    margin: 15px;
 }
 #navbar {
     position: sticky;
@@ -39,20 +53,25 @@ a{
     backdrop-filter: saturate(180%) blur(8px);
     padding: 10px;
     margin: -10px;
+    top: 0px;
+    z-index: 1;
 }
 #nav {
     display: flex;
     justify-content: space-evenly;
     width: 400px;
     font-size: 14pt;
+    font-family: 'Rubik', sans-serif;
 }
 #nav a {
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
     padding: 10px;
+    color: pink;
 }
 #nav #home{
     padding: 0px;
+    padding-top: 3px;
 }
 #nav a:hover{
     background-color: rgba(0, 0, 0, 0.3);
@@ -68,7 +87,6 @@ a:active{
 #main {
     display: flex;
     flex-direction: column;
-    width: 500px;
     align-items: center;
     margin: auto;
 }
@@ -79,7 +97,8 @@ a:active{
 }
 #svglinks svg {
     fill: white;
-    margin: 0px 10px 10px;
+    width: 40px;
+    margin: 10px;
 }
 #svglinks svg:hover {
     fill: rgba(0, 0, 0, 0.5);
@@ -88,7 +107,7 @@ a:active{
     width: 100px;
     font-size: 20pt;
     border-radius: 10px;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Rubik', sans-serif;
     float: right;
 }
 .box {
@@ -102,13 +121,33 @@ a:active{
     text-align: center;
     padding: 15px;
 }
+.box p{
+    text-align: justify;
+    margin: 15px;
+}
 .box.button{
     font-size: 14pt;
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-#research {
+.rows {
     display: flex;
     justify-content: space-evenly;
+}
+.box.heading {
+    width: 300px;
+}
+.box.desc svg {
+    fill: white;
+    width: 100px;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: -30px;
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(8px);
+    padding: 10px;
+    margin: -10px;
 }

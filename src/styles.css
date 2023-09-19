@@ -1,13 +1,14 @@
 body {
     background-image: url("/src/img/background2.png");
     background-repeat: repeat;
-    background-size: 120%;
+    background-size: 125%;
     background-color: black;
     color: white;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
     gap: 75px;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4 {
     font-family: 'Rubik', sans-serif;
@@ -31,12 +32,13 @@ a{
     color: skyblue;
     text-decoration: none;
 }
+
 @media screen and (max-width:1000px) {
     .rows {
         flex-direction: column;
     }
     .box {
-        width: 90%;
+        width: 400px;
     }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -53,7 +55,7 @@ a{
     backdrop-filter: saturate(180%) blur(8px);
     padding: 10px;
     margin: -10px;
-    top: 0px;
+    top: -1px;
     z-index: 1;
 }
 #nav {
@@ -79,11 +81,6 @@ a{
 a:active{
     color: white;
 }
-
-#meow {
-    position: absolute;
-    width: 300px;
-}
 #main {
     display: flex;
     flex-direction: column;
@@ -106,7 +103,6 @@ a:active{
 #cv {
     width: 100px;
     font-size: 20pt;
-    border-radius: 10px;
     font-family: 'Rubik', sans-serif;
     float: right;
 }
@@ -121,12 +117,22 @@ a:active{
     text-align: center;
     padding: 15px;
 }
+.box img {
+    border-radius: 10px;
+    width: 500px;
+}
+.box.img {
+    border-radius: 10px;
+    width: 500px;
+}
 .box p{
-    text-align: justify;
     margin: 15px;
+    text-align: justify;
 }
 .box.button{
     font-size: 14pt;
+    width: 300px;
+    border-radius: 10px;
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
@@ -139,7 +145,6 @@ a:active{
     width: 300px;
 }
 .box.desc svg {
-    fill: white;
     width: 100px;
     float: left;
     margin-top: 15px;

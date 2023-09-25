@@ -32,6 +32,9 @@ a{
     color: skyblue;
     text-decoration: none;
 }
+p a:hover{
+    text-decoration: underline;
+}
 
 @media screen and (max-width:1000px) {
     .rows {
@@ -136,6 +139,11 @@ a:active{
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+}
+.linkbtn{
+    display: block;
+    width: 300px;
+    margin: auto;
 }
 .rows {
     display: flex;

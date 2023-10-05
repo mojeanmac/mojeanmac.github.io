@@ -139,6 +139,9 @@ a:active{
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    transition: scale 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 .linkbtn{
     display: block;
@@ -155,9 +158,15 @@ a:active{
 .box.desc svg {
     width: 100px;
     float: left;
+}
+#research .box.desc svg {
     margin-top: 15px;
     margin-bottom: -30px;
 }
+#projects .box.desc svg {
+    margin: 15px;
+}
+
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: saturate(180%) blur(8px);

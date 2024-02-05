@@ -73,10 +73,7 @@ p a:hover{
     border-radius: 10px;
     padding: 10px;
     color: pink;
-}
-#nav #home{
-    padding: 0px;
-    padding-top: 3px;
+    transition: 0.5s;
 }
 #nav a:hover{
     background-color: rgba(0, 0, 0, 0.3);
@@ -99,6 +96,7 @@ a:active{
     fill: white;
     width: 40px;
     margin: 10px;
+    transition: fill 0.3s ease;
 }
 #svglinks svg:hover {
     fill: rgba(0, 0, 0, 0.5);
@@ -136,13 +134,22 @@ a:active{
     font-size: 14pt;
     width: 300px;
     border-radius: 10px;
+    transition: background-color 0.3s ease;
+
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
-    transition: scale 0.5s ease;
-    transition: background-color 0.5s ease;
+
 }
+
+/* .button {
+    transform: scale(1);
+    transition: transform 5s ease-in-out;
+}
+.button:hover{
+    transform: scale(1.05);
+} */
+
 .linkbtn{
     display: block;
     width: 300px;

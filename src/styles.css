@@ -66,6 +66,11 @@ p a:hover{
 #name h1 {
     font-size: 40pt;
 }
+
+#name img {
+    width: 450px;
+}
+
 #nav {
     display: flex;
     justify-content: space-evenly;

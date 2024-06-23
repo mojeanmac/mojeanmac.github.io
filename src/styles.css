@@ -59,7 +59,14 @@ b {
     .box.img {
         width: 80% !important;
     }
+    .box.aside {
+        width: 80% !important;
+    }
+    #name img {
+        width: 100% !important;
+    }
     footer {
+        margin-left: 0 !important;
         width: auto !important;
     }
 
@@ -141,6 +148,9 @@ a:active{
     scroll-margin-top: 10px;
     margin-left: 500px;
 }
+#research .box.desc {
+    border-radius: 10px 10px 40px 10px;
+}
 
 #svglinks{
     display: flex;
@@ -156,7 +166,7 @@ a:active{
 }
 #svglinks svg:hover {
     fill: rgba(0, 0, 0, 0.4);
-    transform: scale(1.05);
+    transform: scale(1.1);
 
 }
 #cv {
@@ -227,11 +237,7 @@ a:active{
 .linkbtn{
     width: 300px;
 }
-.linkhdr{
-    width: 300px;
-    display: block;
-    margin: auto;
-}
+
 .hdr {
     width: 300px;
     display: block;
@@ -240,11 +246,23 @@ a:active{
 .links {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.box.button.paper {
+    text-align: left;
+    width: 450px;
+}
+.box.paper h4 {
+    margin: 0;
+    color: #ffedab;
 }
 .box.heading {
     width: 60%;
     max-width: 500px;
     border-radius: 40px 10px 40px 10px;
+    background-color: rgba(0, 0, 0, 0.65);
     align-self: flex-start;
     color: pink;
 
@@ -258,7 +276,7 @@ a:active{
     float: left;
 }
 .box.aside {
-    border-radius: 20px;
+    border-radius: 5px 20px 20px 20px;
     width: 400px;
     padding: 10px;
 }
@@ -283,6 +301,7 @@ footer a:hover {
 }
 footer p {
     font-size: 12pt;
+    font-family: 'Rubik', sans-serif;
 }
 ::-webkit-scrollbar {
     width: 0px;

@@ -11,7 +11,7 @@ h1, h2, h3, h4 {
     font-family: 'Rubik', sans-serif;
 }
 h1 {
-    font-size: 30pt;
+    font-size: 32pt;
 }
 h2 {
     font-size: 24pt;
@@ -31,6 +31,13 @@ a{
 }
 p a:hover{
     text-decoration: underline;
+}
+strong {
+    color: #ffedab;
+    font-weight: 600;
+}
+b {
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1100px) {
@@ -52,6 +59,9 @@ p a:hover{
     .box.img {
         width: 80% !important;
     }
+    footer {
+        width: auto !important;
+    }
 
 }
 
@@ -61,19 +71,28 @@ p a:hover{
   }
 }
 #name h1, h4 {
-    margin: 15px;
+    margin: 10px;
 }
+
 #name h1 {
-    font-size: 40pt;
+    font-size: 38pt;
+}
+
+#name {
+    border-radius: 40px 40px 10px 10px;
+}
+#about {
+    border-radius: 10px 10px 40px 40px;
 }
 
 #name img {
-    width: 450px;
+    width: 400px;
+    border-radius: 20px 20px 10px 10px;
 }
 
 #nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     font-size: 14pt;
     font-family: 'Rubik', sans-serif;
     position: sticky;
@@ -84,11 +103,13 @@ p a:hover{
     border-radius: 10px;
     padding: 10px;
     color: pink;
-    transition: 0.5s;
     margin: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1);
 }
 #nav a:hover{
     background-color: rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 a:active{
     color: white;
@@ -99,7 +120,7 @@ a:active{
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 600px;
+    width: 500px;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: saturate(180%) blur(8px);
     height: 100%;
@@ -110,32 +131,36 @@ a:active{
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: none;
 }
-#stamp {
-    width: 99px;
+.stamp {
     height: 56px;
+    width: 99px;
     border-radius: 2px;
 }
 
 #home {
     scroll-margin-top: 10px;
-    margin-left: 600px;
+    margin-left: 500px;
 }
 
 #svglinks{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #svglinks svg {
     fill: white;
     width: 40px;
     margin: 10px;
-    transition: fill 0.3s ease;
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1);
 }
 #svglinks svg:hover {
-    fill: rgba(0, 0, 0, 0.5);
+    fill: rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+
 }
 #cv {
-    color: pink;
+    color: skyblue;
     width: 100px;
     font-size: 20pt;
     font-family: 'Rubik', sans-serif;
@@ -169,9 +194,10 @@ a:active{
 .box img {
     border-radius: 10px;
     width: 500px;
+    margin-bottom: -3px;
 }
 .box.img {
-    border-radius: 10px;
+    border-radius: 20px;
     width: 500px;
 }
 .box p{
@@ -181,29 +207,43 @@ a:active{
 .box.button{
     font-size: 14pt;
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1);
 }
 .box.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
 
 }
 
-/* .button {
+.button {
     transform: scale(1);
-    transition: transform 5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 .button:hover{
     transform: scale(1.05);
-} */
+}
 
 .linkbtn{
-    display: block;
     width: 300px;
+}
+.linkhdr{
+    width: 300px;
+    display: block;
     margin: auto;
+}
+.hdr {
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+.links {
+    display: flex;
+    justify-content: center;
 }
 .box.heading {
     width: 60%;
-    max-width: 400px;
+    max-width: 500px;
     background-color: rgba(50, 0, 50, 0.5);
     border-radius: 40px 10px 40px 10px;
 
@@ -216,14 +256,32 @@ a:active{
     margin: 15px 15px 0px 15px;
     float: left;
 }
+.box.aside {
+    border-radius: 20px;
+    width: 400px;
+    padding: 10px;
+}
+.box.aside p {
+    font-size: 12pt;
+    text-align: center;
+}
+
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: saturate(180%) blur(8px);
-    padding: 10px;
-    margin: -10px;
+    padding: 10px 15px;
+    margin-left: 500px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer p {
+    font-size: 12pt;
 }
 ::-webkit-scrollbar {
     width: 0px;

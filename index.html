@@ -9,25 +9,23 @@
         <link rel="icon" type="image/x-icon" href="/src/img/icon.png">
         <link rel="stylesheet" href="src/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik&display=swap" rel="stylesheet">
-        <script src="spotify.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik&display=swap" rel="stylesheet">
     </head>
     <body>
         <div id="sidebar">
             <div id="navbar">
                 <div id="nav">
-                    <a href="#home">Home</a>
-                    <a href="#research">Research</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#hackathons">Hackathons</a>
+                    <a class="button" href="#research">Research</a>
+                    <a class="button" href="#orgs">Student Orgs</a>
+                    <a class="button" href="#projects">Projects</a>
                 </div>
             </div>
             <div class="box" id="name">
-                <img src="/src/img/molly.jpeg">
+                <img src = "/src/img/molly.jpeg">
                 <h1>Molly MacLaren</h1>
-                <h4>she / her</h4>
                 <div id="svglinks">
+                    <h4>she / her</h4>
                     <a href="https://github.com/mojeanmac"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
                     <a href="https://www.linkedin.com/in/mollymaclaren/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
                     <a href="mailto:mmaclaren@ucsd.edu"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -36,8 +34,9 @@
                 </div>
             </div>
             <div class="box desc" id="about">
-                <p>Hi! I'm Molly, a 3rd year computer engineering undergrad at UC San Diego.
-                    My research interests lie in HCI, PL, Security, and Privacy!
+                <p>Hi! I'm Molly, a fourth year computer engineering undergrad at UC San Diego.
+                    <strong>I'm applying to PhD programs in Fall 2024!</strong>
+                    My research interests lie in PL, HCI, Security, and Privacy.
                     I also like to use hardware to make cool things.</p>
             </div>
             <a id="cv" class="box button" href="Molly_MacLaren_Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
@@ -46,7 +45,7 @@
         <div id="home">
             <div id="research">
                 <div class="box heading">
-                    <h1>Research</h1>
+                    <h1>Research Highlights</h1>
                 </div>
                 <div class="content">
                     <div class="box">
@@ -56,23 +55,24 @@
                         <img src = "/src/img/salt.svg">
                         <p>
                             Building on the work of <a href="https://github.com/weirane/vscode-revis" target="_blank" rel="noopener noreferrer"><b>REVIS</b></a>
-                            and the <a href="#s23"><b>error analysis study</b></a> I performed over summer 2023, I designed a logging system that utilizes
-                            VS Code's <a href="https://www.npmjs.com/package/@vscode/extension-telemetry" target="_blank" rel="noopener noreferrer"><b>telemetry API</b></a>
+                            and the <a href="#s23"><b>error analysis study</b></a> I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
                             to gather minimally invasive data on IDE interactions and compiler errors made by Rust programmers participating in our study. My lab is currently working on discovering which
                             programming decisions (and mistakes) correlate to learning progression in the Rust programming language!
 
                         </p>
                     </div>
-                    <a class="linkbtn" href="https://github.com/mojeanmac/vscode-salt" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            Github Repo
-                        </div>
-                    </a>
-                    <a class="linkbtn" href="https://marketplace.visualstudio.com/items?itemName=Kale-Lab.salt" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            VS Code Marketplace Link
-                        </div>
-                    </a>
+                    <div class="links">
+                        <a class="linkbtn" href="https://github.com/mojeanmac/vscode-salt" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Github Repo
+                            </div>
+                        </a>
+                        <a class="linkbtn" href="https://marketplace.visualstudio.com/items?itemName=Kale-Lab.salt" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                VS Code Marketplace Link
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="content">
                     <div class="box" id="s23">
@@ -85,16 +85,18 @@
                             As a result, I found that <a href="https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html" target="_blank" rel="noopener noreferrer"><b>ownership</b></a> errors, while less frequent, took longer on average to fix.
                         </p>
                     </div>
-                    <a class="linkbtn" href="/src/Rusty Presentation.pdf" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            UCSD Summer Research Conference Slides
-                        </div>
-                    </a>
-                    <a class="linkbtn" href="https://arxiv.org/abs/2309.06640" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            HATRA 2023 Paper
-                        </div>
-                    </a>
+                    <div class="links">
+                        <a class="linkbtn" href="/src/Rusty Presentation.pdf" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                UCSD Summer Research Conference Slides
+                            </div>
+                        </a>
+                        <a class="linkbtn" href="https://arxiv.org/abs/2309.06640" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                HATRA 2023 Paper
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="content">
                     <div class="box">
@@ -103,28 +105,30 @@
                     <div class="box desc">
                         <img src = "/src/img/goggles.svg">
                         <p>To understand how VR users and gamers view personal privacy, I surveyed 40 participants to find out which circumstances meet or do not meet their privacy expectations.
-                            I discovered that greatest concern lies in how biometric data and third party data is handled, and those who use these platforms more frequently have <em>significantly lower</em> privacy expectations than those who do only occasionally.
+                            I found that greatest concern lies in how biometric data and third party data is handled, and those who use VR platforms more frequently have <em>significantly lower</em> privacy expectations than those who do only occasionally.
                         </p>
                     </div>
-                    <a class="linkbtn" href="/src/Bolds-Munyaka-ERSP.pdf" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            JSOE Undergrad Research Symposium Poster
-                        </div>
-                    </a>
-                    <a class="linkbtn" href="https://drive.google.com/file/d/1KhlWFkOKNTYKsftJnWhZ6yTRndhvAJ7g/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <div class="box button">
-                            WIPS 2023 Paper
-                        </div>
-                    </a>
+                    <div class="links">
+                        <a class="linkbtn" href="/src/Bolds-Munyaka-ERSP.pdf" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                JSOE Undergrad Research Symposium Poster
+                            </div>
+                        </a>
+                        <a class="linkbtn" href="https://drive.google.com/file/d/1KhlWFkOKNTYKsftJnWhZ6yTRndhvAJ7g/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                WIPS 2023 Paper
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div id="projects">
+            <div id="orgs">
                 <div class="box heading">
-                    <h1>Projects</h1>
+                    <h1>Student Organizations</h1>
                 </div>
             </div>
             <div class="content"> 
-                <a class="linkbtn" href="https://acmucsd.com/" target="_blank" rel="noopener noreferrer">
+                <a class="linkhdr" href="https://acmucsd.com/" target="_blank" rel="noopener noreferrer">
                     <div class="box button">
                         <h2>ACM Cyber</h2>
                     </div>
@@ -136,20 +140,71 @@
                         For the last two years, I've also been writing challenges for <a href="https://sdc.tf/" target="_blank" rel="noopener noreferrer"><b>SDCTF</b></a>, UCSD's annual offensive hacking game!
                     </p>
                 </div>
+                <div class="box img">
+                    <img src="/src/img/cat.jpeg">
+                </div>
+                <div class="box aside">
+                    <p>
+                        <a href="https://github.com/acmucsd/sdctf-2024/tree/main/forensics/watch-the-waves-2" target="_blank" rel="noopener noreferrer"><b>Writeup</b></a> for the above challenge.
+                        Also in SDCTF 2024, my <a href= "https://0xcafe.neocities.org/" target="_blank" rel="noopener noreferrer"><b>neocities site</b></a> with a secret OSINT chall.
+                    </p>
+                </div>
             </div>
-            <div id="hackathons">
+            <div class="content">
+                <a class="linkhdr" href="https://kk6uc.ucsd.edu/" target="_blank" rel="noopener noreferrer">
+                    <div class="box button">
+                        <h2>KK6UC</h2>
+                    </div>
+                </a>
+                <div class="box desc">
+                    <img src = "/src/img/kk6uc.png">
+                    <p> I'm also a member of the UCSD amateur radio club, KK6UC! I've been a licensed technician since 2023 and my call sign is <b>KM6ZWF</b>.
+                        Some of my favorite events are the seasonal <a href="https://www.arrl.org/field-day" target="_blank" rel="noopener noreferrer"><b>field days</b></a>
+                        and we're currently working on hosting a <a href="https://www.winlink.org/" target="_blank" rel="noopener noreferrer"><b>WinLink gateway</b></a>
+                        on our repeater and restoring our <a href="http://kiwisdr.ucsd.edu:8073/" target="_blank" rel="noopener noreferrer"><b>software-defined radio</b></a> (SDR) antenna.
+                    </p>
+                </div>
+                <div class="box img">
+                    <img src="/src/img/operator.jpeg">
+                </div>
+            </div>
+            <div id="projects">
                 <div class="box heading">
-                    <h1>Hackathons</h1>
+                    <h1>Projects and Hacks</h1>
                 </div>
             </div>
                 <div class="content">
-                    <a class="linkbtn" href="https://content.redpitaya.com/blog/a-hackathon-at-ucsd" target="_blank" rel="noopener noreferrer">
+                    <div class="box hdr">
+                        <h3>Pedal Pirates</h3>
+                    </div>
+                    <div class="box desc">
+                        <p> At <a href="https://diamondhacks.vercel.app/" target="_blank" rel="noopener noreferrer"><b>DiamondHacks 2024</a></b>,
+                            we built <a href="https://devpost.com/software/pedal-pirates" target="_blank" rel="noopener noreferrer"><b>Pedal Pirates</b></a>, a web app for keeping track where and when bike thefts occur on campus
+                            through publicly available police logs and crowd-sourced material. It was my first time working with REACT.
+                            We won first place in the security category! I hope to get this permanently hosted for the following school year and beyond!
+                        </p>
+                    </div>
+                    <div class="box img">
+                        <img src="/src/img/pp.png">
+                    </div>
+                    <div class="box img">
+                        <img src="/src/img/sean.jpeg">
+                    </div>
+                    <div class="box aside">
+                        <p>
+                            Sean is in a lot of these hackathon photos.
+                            He is the <s>GOAT</s> <a href="https://sheeptester.github.io/" target="_blank" rel="noopener noreferrer"><b>sheep</b></a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="content">
+                    <a class="linkhdr" href="https://content.redpitaya.com/blog/a-hackathon-at-ucsd" target="_blank" rel="noopener noreferrer">
                         <div class="box button">
                             <h2>Red Pitaya</h2>
                         </div>
                     </a>
                     <div class="box desc">
-                        <p>In this 24 hour hackathon, I worked on the IR morse tranciever hardware powered by the Red Pitaya FPGA board.
+                        <p>In this 24 hour hackathon, I worked on the IR morse tranciever hardware, powered by the Red Pitaya FPGA board.
                             With one hour left and most of our teammates <a href="https://docs.google.com/presentation/d/1Bc31zyP4clwBufQ5aYlNTBcqfAu6xIB9ZYJzcU_yX5Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer">jumping ship</a>, we were able to synthesize the work of two teams and demo a transmitter <a href="https://github.com/SheepTester/hello-world/tree/master/redpitaya_FPGA" target="_blank" rel="noopener noreferrer">written in VHDL</a> with a JavaScript interface,
                             and a reciever <a href="https://github.com/19lmyers/red-pitaya-2023" target="_blank" rel="noopener noreferrer">using SCPI</a> to translate the signal. In the end we won <b>first place!</b>
                         </p>
@@ -162,14 +217,14 @@
                     </div>
                 </div>
                 <div class="content">
-                    <a class="linkbtn" href="https://hardhack.dev/" target="_blank" rel="noopener noreferrer">
+                    <a class="linkhdr" href="https://hardhack.dev/" target="_blank" rel="noopener noreferrer">
                         <div class="box button">
                             <h2>H.A.R.D. Hack</h2>
                         </div>
                     </a>
                     <div class="box desc">
                         <p>After a trip to <a href="https://maps.app.goo.gl/PB3YiQtrnqAuVVCT7" target="_blank" rel="noopener noreferrer">Round One</a>, we were inspired to make different types of controllers to change the way we interact with browser-based games.
-                        I attempted to build an amplifier to detect EMG signals in the hand through four pennies attached to the wrist, but eventually the team decided to focus on a <a href="https://github.com/UDXS/hh23-rhythm" target="_blank" rel="noopener noreferrer">rhythm game</a> using Infineon's CAPSENSE sensors and the SerialPort API. We won second place for the Infineon challenge!</p>
+                        We demoed a <a href="https://github.com/UDXS/hh23-rhythm" target="_blank" rel="noopener noreferrer">rhythm game</a> using Infineon's CAPSENSE sensors and the SerialPort API. We won second place for the Infineon challenge!</p>
                     </div>
                     <div class="box img">
                         <img src="/src/img/gaming.png">
@@ -183,12 +238,11 @@
     </body>
     <footer>
         <a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer">source</a>
-        <div>
-            <img id="stamp" src="src/img/stamps/madoka.gif">
-            <img id="stamp" src="src/img/stamps/isopod.png">
-            <img id="stamp" src="src/img/stamps/computer.jpeg">
-            <img id="stamp" src="src/img/stamps/cateeper.gif">
-            <img id="stamp" src="src/img/stamps/rgu.gif">
-        </div>
+        <img src="/src/img/stamps/madoka.gif" class="stamp">
+        <img src="/src/img/stamps/computer.jpeg" class="stamp">
+        <img src="/src/img/stamps/cateeper.gif" class="stamp">
+        <img src="/src/img/stamps/rgu.gif" class="stamp">
+        <img src="/src/img/stamps/isopod.png" class="stamp">
+        <p>last updated 6/22/24</p>
     </footer>
 </html>

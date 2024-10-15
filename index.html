@@ -36,7 +36,7 @@
             <div class="box desc" id="about">
                 <p>Hi! I'm Molly, a fourth year computer engineering undergrad at UC San Diego.
                     <strong>I'm applying to graduate programs this cycle for Fall 2025!</strong>
-                    My research interests lie in PL, HCI, Security, and Privacy.
+                    My research interests lie in PL, HCI, FM, Security, and Privacy.
                     I also like to use hardware to make cool things.</p>
             </div>
             <a id="cv" class="box button" href="Molly_MacLaren_Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
@@ -45,7 +45,30 @@
         <div id="home">
             <div id="research">
                 <div class="box heading">
-                    <h1>Research Highlights</h1>
+                    <h1>Latest in Research</h1>
+                </div>
+                <div class="content">
+                    <div class="box">
+                        <h3>Union-Find and Usability: A Verification Case Study</h3>
+                    </div>
+                    <div class="box desc">
+                        <img src = "/src/img/check.svg">
+                        <p>
+                            Are automated Rust verifiers usable by programmers without a formal methods background?
+                            At <a href="https://www.llnl.gov/"target="_blank" rel="noopener noreferrer"><b>LLNL</b></a>,
+                            I conducted a case study using the <a href="https://github.com/viperproject/prusti-dev" target="_blank" rel="noopener noreferrer"><b>Prusti</b></a> 
+                            and <a href="https://github.com/creusot-rs/creusot" target="_blank" rel="noopener noreferrer"><b>Creusot</b></a> verification tools.
+                            Both tools were used to verify the correctness of a union-find implementation within the E-graphs project, <a href="https://egraphs-good.github.io/" target="_blank" rel="noopener noreferrer"><b>egg</b></a>.
+                            I found that while Prusti was more user-friendly in terms of UI, Creusot made it easier to verify more complex properties.
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a class="linkbtn" href="https://zenodo.org/records/13932367" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Artifact
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="content">
                     <div class="box">
@@ -244,12 +267,9 @@
         </div>
     </body>
     <footer>
-        <a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a>
+        <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a> | last updated 10/14/24</p>
+        <img src="/src/img/stamps/official.gif">
         <img src="/src/img/stamps/madoka.gif" class="stamp">
         <img src="/src/img/stamps/computer.jpeg" class="stamp">
-        <img src="/src/img/stamps/cateeper.gif" class="stamp">
-        <img src="/src/img/stamps/rgu.gif" class="stamp">
-        <img src="/src/img/stamps/isopod.png" class="stamp">
-        <p>last updated 6/23/24</p>
     </footer>
 </html>

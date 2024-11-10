@@ -1,5 +1,5 @@
 body {
-    background-image: url("/src/img/background2.png");
+    background-image: url("/src/img/bg.png");
     background-repeat: repeat;
     background-size: 125%;
     color: white;
@@ -40,10 +40,7 @@ b {
     font-weight: 600;
 }
 
-@media screen and (max-width: 1100px) {
-    body {
-        background-image: url("/src/img/background2vert.png");
-    }
+@media screen and (max-width: 1200px) {
     #sidebar {
         width: auto !important;
         position: static !important;
@@ -93,8 +90,8 @@ b {
 }
 
 #name img {
-    width: 400px;
-    border-radius: 20px 20px 10px 10px;
+    width: 100%;
+    border-radius: 30px 30px 10px 10px;
 }
 
 #nav {
@@ -115,7 +112,7 @@ b {
     transform: scale(1);
 }
 #nav a:hover{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(96, 26, 69, 0.4);
     transform: scale(1.05);
 }
 a:active{
@@ -127,11 +124,15 @@ a:active{
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 500px;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 30%;
+    background-color: rgba(96, 26, 69, 0.6);
     backdrop-filter: saturate(180%) blur(8px);
     height: 100%;
     margin: -10px 0 0 -10px;
+}
+
+#sidecontainer {
+    width: 450px;
 }
 
 #sidebar .box {
@@ -145,7 +146,7 @@ a:active{
 
 #home {
     scroll-margin-top: 10px;
-    margin-left: 500px;
+    margin-left: 30%;
 }
 #research .box.desc {
     border-radius: 10px 10px 40px 10px;
@@ -158,13 +159,13 @@ a:active{
 }
 #svglinks svg {
     fill: white;
-    width: 40px;
+    width: 35px;
     margin: 10px;
     transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
 }
 #svglinks svg:hover {
-    fill: rgba(0, 0, 0, 0.4);
+    fill: rgba(96, 26, 69, 0.4);
     transform: scale(1.1);
 
 }
@@ -180,7 +181,7 @@ a:active{
     margin: 10px;
 }
 #cv:hover{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(96, 26, 69, 0.4);
 }
 .content {
     margin-top: 40px;
@@ -191,12 +192,12 @@ a:active{
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(96, 26, 69, 0.6);
     backdrop-filter: saturate(180%) blur(8px);
     border-radius: 40px 10px 10px 10px;
     border: none;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     scroll-margin-top: 50px;
     max-width: 800px;
 }
@@ -220,7 +221,7 @@ a:active{
     transform: scale(1);
 }
 .box.button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(96, 26, 69, 0.4);
     transform: scale(1.05);
 
 }
@@ -261,7 +262,7 @@ a:active{
     width: 60%;
     max-width: 500px;
     border-radius: 40px 10px 40px 10px;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(96, 26, 69, 0.4);
     align-self: flex-start;
     color: pink;
 
@@ -285,10 +286,10 @@ a:active{
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(96, 26, 69, 0.6);
     backdrop-filter: saturate(180%) blur(8px);
     padding: 10px 15px;
-    margin-left: 500px;
+    margin-left: 30%;
     border-radius: 5px;
     display: flex;
     align-items: center;

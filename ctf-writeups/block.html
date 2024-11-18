@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="../src/ctf-writeups/styles.css">
+<body>
+<div class="box hdr"><h1 id="block-ctf">Block CTF</h1></div>
+<div class="box">
+    <h2 id="an-elf-on-a-shelf--250-pts--28-solves">An Elf on a Shelf | 250 pts | 28 solves</h2>
+    <h3 id="challenge">Challenge</h3>
+    <p>What&#39;s going on here?</p>
+    <a href="https://2024.blockctf.com/files/4be45aef3559f0c0221113248b5feadf/elf.png?token=eyJ1c2VyX2lkIjo0ODEsInRlYW1faWQiOjI4MiwiZmlsZV9pZCI6NDd9.ZzeTDg.IbPkgi5asnzZLkvtK_KwmlC-TVM">elf.png</a>
+    
+    <img src="../src/ctf-writeups/block/elf.png" alt="elf.png">
+</div>
+<div class="box">
+<h3 id="solution">Solution</h3>
+<p>This is my first hard reverse engineering challenge, completed with the help of friends!</p>
+<p>The pixel encoding looks familiar. The square itself is doubled in resolution, so I have to resample every fourth pixel for further analysis.</p>
+<pre><code class="language-python">from PIL import Image
+
+with Image.open(&quot;elf-cropped.png&quot;) as img:
+    width, height = img.size
+    new_img = Image.new(&quot;RGB&quot;, (width // 2, height // 2))
+    # recreate the image only sampling every other pixel
+    for x in range(0, width, 2):
+        for y in range(0, height, 2):
+            new_img.putpixel((x // 2, y // 2), img.getpixel((x, y)))
+    new_img.save(&quot;elf-crop-small.png&quot;)
+</code></pre>
+<p><img class="og" src="../src/ctf-writeups/block/elf-crop-small.png" alt="result"></p>
+<p>I adapted some of my python <a href="https://replit.com/@molly30/Kitty-Steganography#README.md">(code playground)</a> I wrote for a workshop on LSB steganography for high schoolers last year <a href="https://docs.google.com/presentation/d/1ciClWVrxGWm2nRxe3EIslmAv1vtBA__4nUsYF9Yz1jQ/edit#slide=id.g2cac06ecf6d_0_62">(silly slides)</a> to read the full R, G, and B values as bytes and decode them into characters. My first time around, I could definitely parse ascii characters and seemed to resemble <code>.ELF</code> format, but the order seemed somewhat scrambled. Here&#39;s a snippet:</p>
+<pre><code>wrageimpnglf.ead reageimpngut.inp
+</code></pre>
+<p>Because every three characters are reversed, and the fact that the elf is looking in a <em>mirror</em> I realized we need to iterate ib reverse across the x-axis.</p>
+<pre><code class="language-python">from PIL import Image
+src = &quot;elf-crop-small.png&quot;
+
+binary = []
+with Image.open(src) as img:
+    width, height = img.size
+    for y in range(height):
+        for x in reversed(range(width)): # reverse across x
+            pixel = list(img.getpixel((x, y)))  # create a 3 element list: [R, G, B]
+            for n in range(3):
+                # append each byte of R, G, and B, to binary
+                binary.append(format(pixel[n], &quot;08b&quot;))
+
+message = &quot;&quot;
+for byte in binary: 
+    c = chr(int(byte, 2))  # convert byte to a character
+    message += c  # add to message
+print(message)
+
+# print binary to .elf file
+with open(&quot;elfy.elf&quot;, &quot;wb&quot;) as f:
+    for byte in binary:
+        f.write(bytes([int(byte, 2)]))
+</code></pre>
+<p><a href="../src/ctf-writeups/block/elfy.elf">Resulting ELF</a></p>
+<p>Here&#39;s where the actual revving comes in!</p>
+<p>To view it, I googled &quot;elf view on mac&quot; and downloaded the release from the first <a href="https://github.com/horsicq/XELFViewer">github page</a> that came up. This turned out to have a surprise.</p>
+<p><img src="../src/ctf-writeups/block/xelf.png" alt="xelf"></p>
+<p>The developer seems very cracked, but they made design choices that I don't find tasteful.</p>
+<p>My friend pointed me to <a href="https://cutter.re/">Cutter</a>, which has a few more useful features. Looking at the recompiler, we saw that there was something being drawn with ImageMagick to the bottom left corner with constant green and blue value.</p>
+<p><img src="../src/ctf-writeups/block/magick.png" alt="decomp"></p>
+<p>And there it is! The square was in plain sight all along!</p>
+<p><img src="../src/ctf-writeups/block/square.png" alt="square"></p>
+<p><img class="og" src="../src/ctf-writeups/block/elf-square.png" alt="square cropped"></p>
+<p>Okay, lets look at just the least significant bit of red in each pixel and try to remake the flag!</p>
+<pre><code>QÕhü¥¹hüI ¹IÆÆúÆqq¹õüI ÕQþ
+</code></pre>
+<p>Hmm, it also looks like it goes through a function called <code>mask_flag</code> before being written to the image</p>
+<img src="../src/ctf-writeups/block/main.png" alt="main">
+<img src="../src/ctf-writeups/block/mask.png" alt="mask">
+<p>SBOX is likely a lookup table, so the indexes of the bytes I extracted above should correspond to the character values we need!</p>
+<p>My friend found its address and pasted the raw bytes into discord...</p>
+<p><img src="../src/ctf-writeups/block/discord.png" alt="discord"></p>
+<p>Okay, I can work with this, just do some string comparison with the bytes while taking care to iterate over every two characters:</p>
+<pre><code class="language-python">from PIL import Image
+src = &quot;elf-square.png&quot;
+
+binary = &quot;&quot; 
+with Image.open(src) as img:
+    width, height = img.size
+    for y in range(height):  
+        for x in range(width):
+            pixel = list(img.getpixel((x, y)))  # create a 3 element list: [R, G, B]
+            binary += str(pixel[0] &amp; 1)  # extract only R LSB
+
+message = &quot;&quot;
+hexes = []
+for i in range(0, len(binary), 8):  # loop through binary list in steps of 8
+    byte = binary[i:i + 8]  # get the next 8 bits
+    c = chr(int(byte, 2))  # convert byte to a character
+    message += c  # add to message
+    hexbyte = hex(int(byte, 2))
+    hexes.append(hexbyte[2:].zfill(2)) # convert hex byte to two character string
+
+print(message)
+
+sbox = &quot;AE27B18D 7719A46F B04891F8 1669EEF6 30D2DAAA 2E885D63 39CF17E1 B5E23C1A AC3E078E CD763F38 B67EF0C7 97AD8252 FADCDE86 F529587C FB5A35F4 2DE98B0B 12C4838A B8D60C1C 4EE32154 2CCA9A70 BB06ABE7 595EFDFF 558F0EE4 C5348C71 CE687209 4C0151FC 6C494B1B D5B97F4D 850FC6DB 1DAF9564 90570AA5 04FE50BC 107B759C A07DDDE8 1FC83178 81D960CC ED5323B2 5F9B9D94 14057AC1 5B80DF26 28A1EFB4 99252A4A 983A8903 47C26BC3 5CA702F1 D740F9D0 2FC036D4 45736AB3 61D14167 6E209642 22371556 BA441846 CB1E33D8 A60092EB 3D242B62 EC13E584 E0659FE6 F3F2B74F 93BFF7D3 EA6D8732 66080DC9 A243A879 74BD11BE A99E3BA3&quot;
+sbox = sbox.replace(&quot; &quot;, &quot;&quot;).lower()
+lut = [sbox[i:i+2] for i in range(0, len(sbox), 2)] # remake lookup table
+
+for h in hexes:
+    if h in lut:
+        print(chr(lut.index(h)), end=&quot;&quot;)
+</code></pre>
+<p>And we get the flag! <strong><code>flag{magick_mirr0r__m4gick_elf}</code></strong></p>
+</div>
+</body>

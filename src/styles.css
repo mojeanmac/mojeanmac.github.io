@@ -67,6 +67,9 @@ b {
         margin-left: 0 !important;
         width: auto !important;
     }
+    body {
+        background-repeat: repeat !important;
+    }
 
 }
 

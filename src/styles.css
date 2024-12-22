@@ -58,7 +58,7 @@ b {
         width: 80% !important;
     }
     .box.aside {
-        width: 80% !important;
+        width: 100% !important;
     }
     #name img {
         width: 100% !important;
@@ -68,7 +68,11 @@ b {
         width: auto !important;
     }
     body {
-        background-repeat: repeat !important;
+        background-size: 150%;
+        background-repeat: repeat;
+    }
+    .box.button.paper {
+        width: 80% !important;
     }
 
 }

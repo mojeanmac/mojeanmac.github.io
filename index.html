@@ -17,8 +17,9 @@
             <div id="sidecontainer">
                 <div id="navbar">
                     <div id="nav">
+                        <a class="button" href="#updates">Updates</a>
                         <a class="button" href="#research">Research</a>
-                        <a class="button" href="#orgs">Student Orgs</a>
+                        <a class="button" href="#orgs">Orgs</a>
                         <a class="button" href="#projects">Projects</a>
                     </div>
                 </div>
@@ -36,21 +37,47 @@
                 </div>
                 <div class="box desc" id="about">
                     <p>Hi! I'm Molly, a fourth year computer engineering undergrad at UC San Diego.
-                        <strong>I'm applying to graduate programs this cycle for Fall 2025!</strong>
+                        <strong>I'm applying to grad school this cycle for Fall 2025!</strong>
                         My research interests lie in PL, HCI, Verification, Security, and Privacy.
                     </p>
                 </div>
             </div>
-            <a id="cv" class="box button" href="Molly_MacLaren_Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+            <a id="cv" class="box button" href="Molly_MacLaren_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </div>
         <div id="home">
+            <div id="updates">
+                <div class="box heading">
+                    <h1>Recent Updates</h1>
+                </div>
+                <div class="box aside">
+                    <p>
+                        <span class="date">12/17/24:</span>
+                        I caved and made a <a href="https://bsky.app/profile/mojea.bsky.social" target="_blank" rel="noopener noreferrer"><b>Bluesky</b></a>🦋. Don't follow me. Don't follow me especially if you're a professor.
+                    </p>
+                </div>
+                <div class="box aside">
+                    <p>
+                        <span class="date">12/16/24:</span>
+                        I finished the last of my computer engineering courses!
+                        I do not reccommend taking 20 units, tutoring, and research at the same time.
+                        I hastily wrote this blog-post-esque <a href="CSE_291.pdf" target="_blank" rel="noopener noreferrer"><b>report</b></a> on the research I was able to squeeze in this quarter.
+                    </p>
+                </div>
+                <div class="box aside">
+                    <p>
+                        <span class="date">11/25/24:</span>
+                        I rewrote my Rust verification paper! I thank reviewer #3 for their excellent albeit heavy-handed feedback.
+                        (here's a <a href="ufcert-preprint.pdf" target="_blank" rel="noopener noreferrer"><b>preprint</b></a>🤫)
+                    </p>
+                </div>
+            </div>
             <div id="research">
                 <div class="box heading">
                     <h1>Research</h1>
                 </div>
                 <div class="content">
                     <div class="box">
-                        <h3>Union-Find and Usability: A Verification Case Study</h3>
+                        <h3>Realistic Rust Verification for Software Engineers</h3>
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/check.svg">
@@ -59,12 +86,12 @@
                             At <a href="https://www.llnl.gov/"target="_blank" rel="noopener noreferrer"><b>LLNL</b></a>,
                             I conducted a case study using the <a href="https://github.com/viperproject/prusti-dev" target="_blank" rel="noopener noreferrer"><b>Prusti</b></a> 
                             and <a href="https://github.com/creusot-rs/creusot" target="_blank" rel="noopener noreferrer"><b>Creusot</b></a> formal verification tools.
-                            Both tools were used to verify the correctness of a union-find implementation within the E-graphs project, <a href="https://egraphs-good.github.io/" target="_blank" rel="noopener noreferrer"><b>egg</b></a>.
+                            Both tools were used to verify the correctness of the underlying union-find of the E-graphs, <a href="https://egraphs-good.github.io/" target="_blank" rel="noopener noreferrer"><b>egg</b></a>.
                             I found that while Prusti was more user-friendly in terms of UI, Creusot made it easier to verify more complex properties.
                         </p>
                     </div>
                     <div class="links">
-                        <a class="linkbtn" href="https://zenodo.org/records/13887654" target="_blank" rel="noopener noreferrer">
+                        <a class="linkbtn" href="https://zenodo.org/records/14279430" target="_blank" rel="noopener noreferrer">
                             <div class="box button">
                                 Artifact
                             </div>
@@ -85,8 +112,10 @@
                         <p>
                             Building on the work of <a href="https://github.com/weirane/vscode-revis" target="_blank" rel="noopener noreferrer"><b>REVIS</b></a>
                             and the <a href="#s23"><b>error analysis study</b></a> I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
-                            to gather minimally invasive data on IDE interactions and compiler errors made by Rust programmers participating in our study. My lab is currently working on discovering which
+                            to gather data on IDE interactions, errors, and <a href="https://rustc-dev-guide.rust-lang.org/hir.html" target="_blank" rel="noopener noreferrer"><b>HIR</b></a>
+                            inferences of Rust programmers participating in our study. I am currently working on discovering which
                             programming decisions (and mistakes) correlate to learning progression in the Rust programming language!
+                            My goal is to build a tool that can provide personalized feedback to programmers based on their level of Rust expertise and background in other langs.
 
                         </p>
                     </div>
@@ -111,7 +140,7 @@
                         <img src = "/src/img/crab.svg">
                         <p>What are the most frequent and costly errors for programmers to fix, and how can we design tools to make debugging them more efficient? 
                             I analyzed 10,957 <a href="https://www.rust-lang.org/" target="_blank" rel="noopener noreferrer"><b>Rust</b></a> diagnostic messages recorded from students and categorized them into 1916 distinct <em>resolution sessions</em> to analyze error frequency and average time taken to resolve.
-                            As a result, I found that <a href="https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html" target="_blank" rel="noopener noreferrer"><b>ownership</b></a> errors, while less frequent, took longer on average to fix.
+                            As a result, I found that particular <a href="https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html" target="_blank" rel="noopener noreferrer"><b>ownership</b></a> errors are among the most frequent and take longer on average to fix.
                         </p>
                     </div>
                     <div class="links paper">
@@ -223,8 +252,8 @@
                     <div class="box desc">
                         <p> At <a href="https://diamondhacks.vercel.app/" target="_blank" rel="noopener noreferrer"><b>DiamondHacks 2024</a></b>,
                             we built <a href="https://devpost.com/software/pedal-pirates" target="_blank" rel="noopener noreferrer"><b>Pedal Pirates</b></a>, a web app for keeping track where and when bike thefts occur on campus
-                            through publicly available police logs and crowd-sourced data. It was my first time working with REACT.
-                            We won first place in the security category! I hope to get this permanently hosted for the following school year and beyond!
+                            through publicly available police logs and crowd-sourced data. It was my first time working with React.
+                            We won first place in the security category! I intend to get this permanently hosted for the following school year and beyond!
                         </p>
                     </div>
                     <div class="box img">
@@ -276,7 +305,7 @@
         </div>
     </body>
     <footer>
-        <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a> | last updated 11/30/24</p>
+        <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a> | last updated 12/22/24</p>
         <img src="/src/img/stamps/official.gif">
         <img src="/src/img/stamps/madoka.gif" class="stamp">
         <img src="/src/img/stamps/computer.jpeg" class="stamp">

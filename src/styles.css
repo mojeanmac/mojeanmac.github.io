@@ -302,7 +302,7 @@ a:active{
 footer {
     background-color: rgba(96, 26, 69, 0.6);
     backdrop-filter: saturate(180%) blur(8px);
-    padding: 10px 15px;
+    padding: 10px;
     margin-left: 30%;
     border-radius: 5px;
     display: flex;

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Block CTF 2024 | molly computer blog</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>molly computer blog</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1>Block CTF 2024</h1>
+
+  
+  
+  <time datetime="2024-11-15T11:20:05-07:00">November 15, 2024</time>
+
+  <h1 id="block-ctf">Block CTF</h1>
+<h2 id="an-elf-on-a-shelf--250-pts--28-solves">An Elf on a Shelf | 250 pts | 28 solves</h2>
+<h3 id="challenge">Challenge</h3>
+<blockquote>
+<p>What&rsquo;s going on here?</p>
+<p><a href="https://2024.blockctf.com/files/4be45aef3559f0c0221113248b5feadf/elf.png?token=eyJ1c2VyX2lkIjo0ODEsInRlYW1faWQiOjI4MiwiZmlsZV9pZCI6NDd9.ZzeTDg.IbPkgi5asnzZLkvtK_KwmlC-TVM">elf.png</a>
+<img src="../assets/block/elf.png" alt="elf.png"></p></blockquote>
+<h3 id="solution">Solution</h3>
+<p>This is my first hard reverse engineering challenge that I feel proud to have completed successfully with the help of friends!</p>
+<p>The pixel encoding looks familiar. The square itself is doubled in resolution, so I have to resample every fourth pixel for further analysis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;elf-cropped.png&#34;</span>) <span style="color:#66d9ef">as</span> img:
+</span></span><span style="display:flex;"><span>    width, height <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>    new_img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;RGB&#34;</span>, (width <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>, height <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># recreate the image only sampling every other pixel</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, width, <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, height, <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>            new_img<span style="color:#f92672">.</span>putpixel((x <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>, y <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>), img<span style="color:#f92672">.</span>getpixel((x, y)))
+</span></span><span style="display:flex;"><span>    new_img<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#34;elf-crop-small.png&#34;</span>)
+</span></span></code></pre></div><p><img src="../assets/block/elf-crop-small.png" alt="result"></p>
+<p>I adapted some of my python <a href="https://replit.com/@molly30/Kitty-Steganography#README.md">(code playground)</a> I wrote for a workshop on LSB steganography for high schoolers last year <a href="https://docs.google.com/presentation/d/1ciClWVrxGWm2nRxe3EIslmAv1vtBA__4nUsYF9Yz1jQ/edit#slide=id.g2cac06ecf6d_0_62">(silly slides)</a> to read the full R, G, and B values as bytes and decode them into characters. My first time around, I could definitely parse ascii characters and seemed to resemble <code>.ELF</code> format, but the order seemed somewhat scrambled. Here&rsquo;s a snippet:</p>
+<pre tabindex="0"><code>wrageimpnglf.ead reageimpngut.inp
+</code></pre><p>Because every three characters are reversed, and the fact that the elf is looking in a <em>mirror</em> I realized we need to iterate ib reverse across the x-axis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span>src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;elf-crop-small.png&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>binary <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> Image<span style="color:#f92672">.</span>open(src) <span style="color:#66d9ef">as</span> img:
+</span></span><span style="display:flex;"><span>    width, height <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> reversed(range(width)): <span style="color:#75715e"># reverse across x</span>
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> list(img<span style="color:#f92672">.</span>getpixel((x, y)))  <span style="color:#75715e"># create a 3 element list: [R, G, B]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># append each byte of R, G, and B, to binary</span>
+</span></span><span style="display:flex;"><span>                binary<span style="color:#f92672">.</span>append(format(pixel[n], <span style="color:#e6db74">&#34;08b&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> byte <span style="color:#f92672">in</span> binary: 
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> chr(int(byte, <span style="color:#ae81ff">2</span>))  <span style="color:#75715e"># convert byte to a character</span>
+</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">+=</span> c  <span style="color:#75715e"># add to message</span>
+</span></span><span style="display:flex;"><span>print(message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print binary to .elf file</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;elfy.elf&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> byte <span style="color:#f92672">in</span> binary:
+</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(bytes([int(byte, <span style="color:#ae81ff">2</span>)]))
+</span></span></code></pre></div><p><a href="../assets/block/elfy.elf">Resulting ELF</a></p>
+<p>Here&rsquo;s where the actual revving comes in!</p>
+<p>To view it, I googled &ldquo;elf view on mac&rdquo; and downloaded the release from the first <a href="https://github.com/horsicq/XELFViewer">github page</a> that came up. This turned out to have a surprise.</p>
+<p><img src="../assets/block/xelf.png" alt="xelf"></p>
+<p>The developer is very talented, but I don&rsquo;t know if I am most comfortable with their creative design choices.</p>
+<p>My friend pointed me to <a href="https://cutter.re/">Cutter</a>, which has a few more useful features. Looking at the recompiler, we saw that there was something being drawn with ImageMagick to the bottom left corner with constant green and blue value.</p>
+<p><img src="../assets/block/magick.png" alt="decomp"></p>
+<p>And there it is! The square was in plain sight all along!</p>
+<p><img src="../assets/block/square.png" alt="square"></p>
+<p><img src="../assets/block/elf-square.png" alt="square cropped"></p>
+<p>Okay, lets look at just the least significant bit of red and try to remake the flag!</p>
+<pre tabindex="0"><code>QÕhü¥¹hüI ¹IÆÆúÆqq¹õüI ÕQþ
+</code></pre><p>Hmm, it also looks like it goes through a function called <code>mask_flag</code> before being written to the image</p>
+<p><img src="../assets/block/main.png" alt="main">
+<img src="../assets/block/mask.png" alt="mask"></p>
+<p>SBOX is likely a lookup table, so the indexes of the bytes I extracted above should correspond to the character values we need!</p>
+<p>My friend found it in memory and pasted the raw bytes into discord&hellip;</p>
+<p><img src="../assets/block/discord.png" alt="discord"></p>
+<p>Okay, I can work with this, just do some string comparison with the bytes while taking care to iterate over every two characters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span>src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;elf-square.png&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>binary <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> Image<span style="color:#f92672">.</span>open(src) <span style="color:#66d9ef">as</span> img:
+</span></span><span style="display:flex;"><span>    width, height <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(height):  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(width):
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> list(img<span style="color:#f92672">.</span>getpixel((x, y)))  <span style="color:#75715e"># create a 3 element list: [R, G, B]</span>
+</span></span><span style="display:flex;"><span>            binary <span style="color:#f92672">+=</span> str(pixel[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># extract only R LSB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>hexes <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(binary), <span style="color:#ae81ff">8</span>):  <span style="color:#75715e"># loop through binary list in steps of 8</span>
+</span></span><span style="display:flex;"><span>    byte <span style="color:#f92672">=</span> binary[i:i <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>]  <span style="color:#75715e"># get the next 8 bits</span>
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> chr(int(byte, <span style="color:#ae81ff">2</span>))  <span style="color:#75715e"># convert byte to a character</span>
+</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">+=</span> c  <span style="color:#75715e"># add to message</span>
+</span></span><span style="display:flex;"><span>    hexbyte <span style="color:#f92672">=</span> hex(int(byte, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    hexes<span style="color:#f92672">.</span>append(hexbyte[<span style="color:#ae81ff">2</span>:]<span style="color:#f92672">.</span>zfill(<span style="color:#ae81ff">2</span>)) <span style="color:#75715e"># convert hex byte to two character string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sbox <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AE27B18D 7719A46F B04891F8 1669EEF6 30D2DAAA 2E885D63 39CF17E1 B5E23C1A AC3E078E CD763F38 B67EF0C7 97AD8252 FADCDE86 F529587C FB5A35F4 2DE98B0B 12C4838A B8D60C1C 4EE32154 2CCA9A70 BB06ABE7 595EFDFF 558F0EE4 C5348C71 CE687209 4C0151FC 6C494B1B D5B97F4D 850FC6DB 1DAF9564 90570AA5 04FE50BC 107B759C A07DDDE8 1FC83178 81D960CC ED5323B2 5F9B9D94 14057AC1 5B80DF26 28A1EFB4 99252A4A 983A8903 47C26BC3 5CA702F1 D740F9D0 2FC036D4 45736AB3 61D14167 6E209642 22371556 BA441846 CB1E33D8 A60092EB 3D242B62 EC13E584 E0659FE6 F3F2B74F 93BFF7D3 EA6D8732 66080DC9 A243A879 74BD11BE A99E3BA3&#34;</span>
+</span></span><span style="display:flex;"><span>sbox <span style="color:#f92672">=</span> sbox<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34; &#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>lut <span style="color:#f92672">=</span> [sbox[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(sbox), <span style="color:#ae81ff">2</span>)] <span style="color:#75715e"># remake lookup table</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> h <span style="color:#f92672">in</span> hexes:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> h <span style="color:#f92672">in</span> lut:
+</span></span><span style="display:flex;"><span>        print(chr(lut<span style="color:#f92672">.</span>index(h)), end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+</span></span></code></pre></div><p>And we get the flag! <code>flag{magick_mirr0r__m4gick_elf}</code></p>
+
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

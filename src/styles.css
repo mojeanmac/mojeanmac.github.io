@@ -1,21 +1,33 @@
+:root{
+    --boxcolor: rgba(16, 8, 40, 0.15);
+    --hovercolor: rgba(100, 70, 100, 0.4);
+    --blur: saturate(180%) blur(8px);
+    --border: 1px solid rgb(100, 70, 100);
+}
+
+@font-face {
+  font-family: 'notepen';
+  src: url('/src/fonts/Notepen.ttf');
+}
+
 body {
-    background-image: url("/src/img/bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("/src/img/stars.gif");
+    background-repeat: repeat;
     background-attachment: fixed;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
     overscroll-behavior-y: none;
+    image-rendering: -webkit-optimize-contrast;
 }
-h1, h2, h3, h4 {
-    font-family: 'Rubik', sans-serif;
-}
+
 h1 {
     font-size: 32pt;
+    font-family: 'notepen';
 }
 h2 {
-    font-size: 24pt;
+    font-size: 28pt;
+    font-family: 'notepen';
 }
 h3 {
     font-size: 22pt;
@@ -71,7 +83,7 @@ b {
         background-size: 150%;
         background-repeat: repeat;
     }
-    .box.button.paper {
+    .box.button.title {
         width: 80% !important;
     }
     .box p {
@@ -103,27 +115,28 @@ b {
 #name img {
     width: 100%;
     border-radius: 30px 30px 10px 10px;
+    border: var(--border);
 }
 
 #nav {
     display: flex;
     justify-content: center;
     font-size: 14pt;
-    font-family: 'Rubik', sans-serif;
     position: sticky;
     flex-wrap: wrap;
 }
 #nav a {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--boxcolor);
     border-radius: 10px;
     padding: 10px;
     color: pink;
     margin: 10px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
+    border: var(--border);
 }
 #nav a:hover{
-    background-color: rgba(96, 26, 69, 0.4);
+    background-color: var(--hovercolor);
     transform: scale(1.05);
 }
 a:active{
@@ -136,10 +149,11 @@ a:active{
     justify-content: center;
     position: fixed;
     width: 30%;
-    background-color: rgba(96, 26, 69, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
+    background-color: var(--boxcolor);
+    backdrop-filter: var(--blur);
     height: 100%;
     margin: -10px 0 0 -10px;
+    border: var(--border);
 }
 
 #sidecontainer {
@@ -147,7 +161,7 @@ a:active{
 }
 
 #sidebar .box {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--boxcolor);
     backdrop-filter: none;
 }
 .stamp {
@@ -163,20 +177,21 @@ a:active{
     border-radius: 10px 10px 40px 10px;
 }
 
-#svglinks{
+#svglinks {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'notepen';
 }
 #svglinks svg {
     fill: white;
     width: 35px;
-    margin: 10px;
+    margin: 7px;
     transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
 }
 #svglinks svg:hover {
-    fill: rgba(96, 26, 69, 0.4);
+    fill: rgb(100, 70, 100);
     transform: scale(1.1);
 
 }
@@ -184,15 +199,14 @@ a:active{
     color: skyblue;
     width: 100px;
     font-size: 20pt;
-    font-family: 'Rubik', sans-serif;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--boxcolor);;
     border-radius: 10px;
     padding: 10px;
     transition: 0.5s;
     margin: 10px;
 }
 #cv:hover{
-    background-color: rgba(96, 26, 69, 0.4);
+    background-color: var(--hovercolor);
 }
 .date {
     font-size: 12pt;
@@ -205,19 +219,38 @@ a:active{
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.box.button.title.blog {
+    width: 60%;
+}
+
+.blog * {
+    padding-left: 10px; 
+}
+.blog p {
+    color: white;
+}
+.blog time {
+    font-size: 18pt;
+    font-family: 'notepen';
+}
+.blog h4 {
+    padding-top: 10px;
+}
+
 .box {
     width: 80%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(96, 26, 69, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
+    background-color: var(--boxcolor);;
+    backdrop-filter: var(--blur);
     border-radius: 40px 10px 10px 10px;
     border: none;
     text-align: center;
     padding: 10px;
     scroll-margin-top: 50px;
     max-width: 800px;
+    border: var(--border);
 }
 .box img {
     border-radius: 10px;
@@ -233,13 +266,12 @@ a:active{
     text-align: justify;
 }
 .box.button{
-    font-size: 14pt;
     border-radius: 10px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
 }
 .box.button:hover {
-    background-color: rgba(96, 26, 69, 0.4);
+    background-color: var(--hovercolor);
     transform: scale(1.05);
 
 }
@@ -268,19 +300,22 @@ a:active{
     flex-wrap: wrap;
     margin: auto;
 }
-.box.button.paper {
+.box.button.title {
     text-align: left;
     width: 450px;
 }
-.box.paper h4 {
+.box.title h4 {
     margin: 0;
     color: #ffedab;
+}
+.box.button.blog {
+    width: 300px;
 }
 .box.heading {
     width: 60%;
     max-width: 500px;
     border-radius: 40px 10px 40px 10px;
-    background-color: rgba(96, 26, 69, 0.4);
+    background-color: var(--boxcolor);;
     align-self: flex-start;
     color: #ffedab;
 }
@@ -303,22 +338,23 @@ a:active{
 }
 
 footer {
-    background-color: rgba(96, 26, 69, 0.6);
-    backdrop-filter: saturate(180%) blur(8px);
+    width: 50%;
+    background-color: var(--boxcolor);
+    backdrop-filter: var(--blur);
     padding: 10px 10px;
-    margin-left: 30%;
+    margin-left: 40%;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
+    border: var(--border);
 }
 footer a:hover {
     text-decoration: underline;
 }
 footer p {
     font-size: 12pt;
-    font-family: 'Rubik', sans-serif;
 }
 footer img {
     border-radius: 2px;

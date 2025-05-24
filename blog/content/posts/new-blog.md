@@ -2,7 +2,7 @@
 date = '2025-05-23T19:22:03-07:00'
 draft = false
 title = 'New blog'
-summary = 'found a new way to format blog posts and writeups'
+summary = 'a new way to format blog posts and writeups'
 tags = ['misc']
 +++
 

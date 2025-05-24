@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on molly computer blog</title>
-    <link>https://example.org/tags/security/</link>
+    <link>https://macla.ren/blog/tags/security/</link>
     <description>Recent content in Security on molly computer blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Nov 2024 11:20:05 -0700</lastBuildDate>
-    <atom:link href="https://example.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://macla.ren/blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BlockCTF 2024 writeup</title>
-      <link>https://example.org/posts/block-ctf-2024/</link>
+      <link>https://macla.ren/blog/posts/block-ctf-2024/</link>
       <pubDate>Fri, 15 Nov 2024 11:20:05 -0700</pubDate>
-      <guid>https://example.org/posts/block-ctf-2024/</guid>
+      <guid>https://macla.ren/blog/posts/block-ctf-2024/</guid>
       <description>rev writeup from a ctf hosted by square:tm:</description>
     </item>
   </channel>

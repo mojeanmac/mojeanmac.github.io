@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>molly computer blog</title>
-    <link>https://macla.ren/blog/</link>
-    <description>Recent content on molly computer blog</description>
+    <title>Misc on molly computer blog</title>
+    <link>https://macla.ren/blog/tags/misc/</link>
+    <description>Recent content in Misc on molly computer blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 May 2025 19:22:03 -0700</lastBuildDate>
-    <atom:link href="https://macla.ren/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://macla.ren/blog/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New blog</title>
       <link>https://macla.ren/blog/posts/new-blog/</link>
       <pubDate>Fri, 23 May 2025 19:22:03 -0700</pubDate>
       <guid>https://macla.ren/blog/posts/new-blog/</guid>
       <description>found a new way to format blog posts and writeups</description>
-    </item>
-    <item>
-      <title>BlockCTF 2024 writeup</title>
-      <link>https://macla.ren/blog/posts/block-ctf-2024/</link>
-      <pubDate>Fri, 15 Nov 2024 11:20:05 -0700</pubDate>
-      <guid>https://macla.ren/blog/posts/block-ctf-2024/</guid>
-      <description>rev writeup from a ctf hosted by square:tm:</description>
     </item>
   </channel>
 </rss>

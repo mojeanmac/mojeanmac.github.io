@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on molly computer blog</title>
-    <link>https://example.org/tags/</link>
+    <link>https://macla.ren/blog/tags/</link>
     <description>Recent content in Tags on molly computer blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2024 11:20:05 -0700</lastBuildDate>
-    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 May 2025 19:22:03 -0700</lastBuildDate>
+    <atom:link href="https://macla.ren/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Misc</title>
+      <link>https://macla.ren/blog/tags/misc/</link>
+      <pubDate>Fri, 23 May 2025 19:22:03 -0700</pubDate>
+      <guid>https://macla.ren/blog/tags/misc/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Security</title>
-      <link>https://example.org/tags/security/</link>
+      <link>https://macla.ren/blog/tags/security/</link>
       <pubDate>Fri, 15 Nov 2024 11:20:05 -0700</pubDate>
-      <guid>https://example.org/tags/security/</guid>
+      <guid>https://macla.ren/blog/tags/security/</guid>
       <description></description>
     </item>
   </channel>

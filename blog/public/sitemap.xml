@@ -2,21 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/</loc>
-    <lastmod>2025-05-23T01:40:38-07:00</lastmod>
+    <loc>https://macla.ren/blog/tags/misc/</loc>
+    <lastmod>2025-05-23T19:22:03-07:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/block-ctf-2024/</loc>
+    <loc>https://macla.ren/blog/posts/new-blog/</loc>
+    <lastmod>2025-05-23T19:22:03-07:00</lastmod>
+  </url><url>
+    <loc>https://macla.ren/blog/posts/</loc>
+    <lastmod>2025-05-23T19:22:03-07:00</lastmod>
+  </url><url>
+    <loc>https://macla.ren/blog/tags/</loc>
+    <lastmod>2025-05-23T19:22:03-07:00</lastmod>
+  </url><url>
+    <loc>https://macla.ren/blog/posts/block-ctf-2024/</loc>
     <lastmod>2024-11-15T11:20:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/security/</loc>
+    <loc>https://macla.ren/blog/tags/security/</loc>
     <lastmod>2024-11-15T11:20:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
-    <lastmod>2024-11-15T11:20:05-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/</loc>
+    <loc>https://macla.ren/blog/</loc>
     <lastmod>2022-08-25T21:30:04+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://macla.ren/blog/categories/</loc>
   </url>
 </urlset>

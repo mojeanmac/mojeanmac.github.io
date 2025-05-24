@@ -4,7 +4,7 @@
  */
 async function getLatestPosts(n = 3) {
   try {
-    const res   = await fetch('/blog/public/index.xml');
+    const res   = await fetch('/blog/index.xml');
     const text  = await res.text();
     const xml   = new DOMParser().parseFromString(text, 'application/xml');
     const items = Array.from(xml.querySelectorAll('item')).slice(0, n);

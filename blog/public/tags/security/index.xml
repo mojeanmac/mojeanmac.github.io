@@ -6,8 +6,15 @@
     <description>Recent content in Security on molly computer blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2024 11:20:05 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 23 May 2025 01:40:38 -0700</lastBuildDate>
     <atom:link href="https://macla.ren/blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We just made up a guy</title>
+      <link>https://macla.ren/blog/posts/piotr/</link>
+      <pubDate>Fri, 23 May 2025 01:40:38 -0700</pubDate>
+      <guid>https://macla.ren/blog/posts/piotr/</guid>
+      <description>you really think someone would do that? just go on the internet and tell lies?</description>
+    </item>
     <item>
       <title>BlockCTF 2024 writeup</title>
       <link>https://macla.ren/blog/posts/block-ctf-2024/</link>

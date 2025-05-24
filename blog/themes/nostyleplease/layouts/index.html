@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<header>
+    <h1>{{ $.Site.Title }}</h1>
+    {{- if $.Site.Params.theme_config.show_description -}}
+        <p>{{ $.Site.Params.description }}</p>
+    {{- end -}}
+</header>
+{{ .Content }}
+{{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
+
+<ul>
+  <li>posts by tag
+    <ul>
+      {{ range $tag, $pages := .Site.Taxonomies.tags }}
+      <li>{{ $tag }}
+        <ul>
+          {{ range $pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ end }}
+    </ul>
+  </li>
+</ul>
+
+
+{{ end }}

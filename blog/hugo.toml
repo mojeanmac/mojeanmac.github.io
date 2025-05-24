@@ -2,3 +2,7 @@ baseURL = 'https://macla.ren/blog'
 languageCode = 'en-us'
 title = 'molly computer blog'
 theme = 'nostyleplease'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

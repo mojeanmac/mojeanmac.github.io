@@ -11,6 +11,7 @@
 }
 
 body {
+    background-color: #050110;
     background-image: url("/src/img/stars.gif");
     background-repeat: repeat;
     background-attachment: fixed;

@@ -50,3 +50,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     container.appendChild(article);
   });
 });
+
+
+const sidebar = document.getElementById('sidebar');
+const home = document.getElementById('home');
+const research = document.getElementById('research');
+let isInLeftZone = false;
+
+function updateSidebarVisibility() {
+    const researchRect = research.getBoundingClientRect();
+    const researchAtTop = researchRect.top <= 0;
+    
+    if (!researchAtTop) {
+        sidebar.classList.remove('closed');
+        home.classList.remove('closed');
+    } else {
+        if (isInLeftZone) {
+            sidebar.classList.remove('closed');
+            home.classList.remove('closed');
+        } else {
+            sidebar.classList.add('closed');
+            home.classList.add('closed');
+        }
+    }
+}
+
+// Mouse hover functionality
+document.addEventListener('mousemove', function(event) {
+    const leftThreshold = window.innerWidth * 0.3;
+    const nowInLeftZone = event.clientX <= leftThreshold;
+    
+    if (nowInLeftZone !== isInLeftZone) {
+        isInLeftZone = nowInLeftZone;
+        updateSidebarVisibility();
+    }
+});
+
+// Scroll functionality
+document.addEventListener('scroll', function() {
+    updateSidebarVisibility();
+});

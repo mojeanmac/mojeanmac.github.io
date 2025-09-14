@@ -54,7 +54,7 @@
                 <div class="box" id="lastfm">
                     <h2>Listening To:</h2>
                     <div id="marquee">
-                        <p id="song">SongName - ArtistName</p>
+                        <p id="song"></p>
                     </div>
                     <div id="meow">
                         <img id="kitty"src="src/img/kitty.gif">
@@ -86,7 +86,13 @@
                     <h1>Blog</h1>
                 </div>
                 <div class="content">
-                    <div id="latest-posts"></div>
+                    <div id="latest-posts">
+                        <div class="box button title blog">
+                            <h4>${post.title}</h4>
+                            <time datetime="${post.pubDate}">${date}</time>
+                            <p>${post.summary}</p>
+                        </div>
+                    </div>
                     <a class="linkbtn" href="/blog/">
                         <div class="box button blog">
                             See more posts

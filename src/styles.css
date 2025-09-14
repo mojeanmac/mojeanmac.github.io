@@ -325,9 +325,7 @@ time {
 .blog h4 {
     padding-top: 10px;
 }
-#latest-posts {
-    width: 450px;
-}
+
 .box {
     width: 80%;
     margin: auto;
@@ -401,6 +399,9 @@ time {
 }
 .box.button.blog {
     width: 300px;
+}
+.box.button.title.blog {
+    width: 450px;
 }
 .box.heading {
     width: 60%;

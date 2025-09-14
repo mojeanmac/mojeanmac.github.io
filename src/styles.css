@@ -69,6 +69,19 @@ b {
         margin-left: 0 !important;
         transform: none !important;
     }
+    #marquee {
+        width: 70% !important
+    }
+    #lastfm {
+        width: 80% !important;
+        flex-direction: column !important;
+    }
+    #meow {
+        margin-top: 40px;
+    }
+    #song {
+        animation: marquee-content 8s linear infinite !important;
+    }
     .box.img img {
         width: 100%;
     }
@@ -126,7 +139,7 @@ b {
     width: 50%;
     border-radius: 100%;
     border: var(--border);
-    background-color: rgb(100, 70, 100);
+    background-color: var(--hovercolor);
 }
 
 .nav {
@@ -208,7 +221,6 @@ a:active{
 }
 #svglinks svg {
     fill: white;
-    width: 35px;
     margin: 7px;
     transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
@@ -229,16 +241,71 @@ a:active{
 #updates {
     margin-bottom: 40px;
 }
-/* #news {
-    height: 320px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none
-} */
+
  #news time {
     color: #ffedab;
  }
+
+#music {
+    display: none;
+}
+
+#lastfm{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 650px;
+    border-radius: 40px;
+    margin-bottom: 40px;
+}
+
+#marquee {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--hovercolor);
+    border: var(--border);
+
+}
+
+#song {
+    font-family: monospace;
+    display: inline-block;
+    padding-left: 100%;
+}
+
+#marquee:hover #song {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-content {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#meow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#meow a {
+    font-family: 'notepen';
+    font-size: 18pt;
+}
+
+#meow a:hover {
+    text-decoration: underline;
+}
+
+#lastfm img {
+    width: 75px;
+}
+
 .content {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -258,7 +325,9 @@ time {
 .blog h4 {
     padding-top: 10px;
 }
-
+#latest-posts {
+    width: 450px;
+}
 .box {
     width: 80%;
     margin: auto;

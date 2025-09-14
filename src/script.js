@@ -75,7 +75,7 @@ function updateSidebarVisibility() {
     }
 }
 
-// Mouse hover functionality
+// Mouse hover sidebar
 document.addEventListener('mousemove', function(event) {
     const leftThreshold = window.innerWidth * 0.3;
     const nowInLeftZone = event.clientX <= leftThreshold;
@@ -86,7 +86,42 @@ document.addEventListener('mousemove', function(event) {
     }
 });
 
-// Scroll functionality
+// Scroll sidebar
 document.addEventListener('scroll', function() {
     updateSidebarVisibility();
+});
+
+// Music widget
+document.addEventListener('DOMContentLoaded', async () => {
+  key = "d02f17dfd561418c9a45e4c62436c5b9" //lol
+  const music = document.getElementById('music');
+  const song = document.getElementById('song');
+  try {
+        fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mojeanmac&api_key=${key}&format=json&limit=1`)
+        .then(response => response.json())
+        .then(data => {
+          const track = data.recenttracks.track[0];
+          const isNowPlaying = track['@attr'] && track['@attr'].nowplaying === "true";
+          if (isNowPlaying) {
+            music.style.display = 'block';
+          } else {
+            return;
+          }
+
+          const songName = track.name;
+          const artistName = track.artist['#text'];
+          const text = `${artistName} - ${songName}`;
+          song.textContent = text;
+          if (text.length > 25) {
+          // Needs scrolling - duplicate for seamless loop
+            song.style.animation = 'marquee-content 8s linear infinite';
+          } else {
+          // Fits without scrolling
+            song.style.animation = 'none';
+            song.style.paddingLeft = '0'; // Reset padding since no scroll needed
+          }
+        });
+  } catch (error) {
+      console.error('Error fetching LastFM data:', error);
+  }
 });

@@ -16,11 +16,11 @@
         <div id="sidebar">
             <div id="sideelems">
                 <div id="navbar">
-                    <div id="nav">
+                    <div class="nav">
+                        <a class="button" href="#updates">Updates</a>
                         <a class="button" href="#blog">Blog</a>
                         <a class="button" href="#research">Research</a>
                         <a class="button" href="#projects">Projects</a>
-                        <a id="cv" class="button" href="Molly_MacLaren_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                     </div>
                 </div>
                 <div class="box" id="name">                  
@@ -46,6 +46,9 @@
                         PL, formal verification, security, and privacy.
                     </p>
                 </div>
+                <div class="nav">
+                    <a id="cv" class="button" href="Molly_MacLaren_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+                </div>
             </div>
         </div>
         <div id="home">
@@ -55,7 +58,10 @@
                 </div>
                 <div class="content" id="news">
                     <div class="box aside">
-                        <p><time>August 2025:</time> 🏭 I moved to Pittsburgh to start my PhD at Carnegie Mellon!</p>
+                        <p><time>September 2025:</time> 👩‍💻 Its official! I'll be advised by Joshua Sunshine in S3D and begin working on <a href="https://borrowsanitizer.com/" target="_blank" rel="noopener noreferrer"><b>Borrow Sanitizer</b></a> with his student, Ian McCormack!</p>
+                    </div>
+                    <div class="box aside">
+                        <p><time>August 2025:</time> 🏭 I moved to Pittsburgh to start my PhD at Carnegie Mellon! TODO: buy a winter coat!</p>
                     </div>
                     <div class="box aside">
                         <p><time>May 2025:</time> ⚛️ I'm interning for a second year with the ROSE compiler group at Lawrence Livermore National Laboratory!</p>
@@ -83,6 +89,25 @@
                     <h1>Research</h1>
                 </div>
                 <div class="content">
+                    <div class="box">
+                        <h3>Paradigm Programming in Rust</h3>
+                    </div>
+                    <div class="box desc">
+                        <img src = "/src/img/barchart.svg">
+                        <p>
+                            Can we use data-driven methodologies to decide which language features are idiomatic for a given programming language?
+                            We designed 16 pairs of functional and imperative code snippets in Rust and conducted a code review quiz to find out which style was more readable!
+                            Additionally, I analyzed 1.5 million functions from open source Rust codebases to see which features were most commonly used across different contexts.
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a class="linkbtn" href="rusty-preprint.pdf" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Preprint
+                            </div>
+                        </a>
+                    </div>
+
                     <div class="box">
                         <h3>Russet: Hardware Verification with Mealy Machines</h3>
                     </div>
@@ -141,7 +166,7 @@
                         <img src = "/src/img/salt.svg">
                         <p>
                             Building on the work of <a href="https://github.com/weirane/vscode-revis" target="_blank" rel="noopener noreferrer"><b>REVIS</b></a>
-                            and the <a href="#s23"><b>error analysis study</b></a> I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
+                            and the error analysis study I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
                             to gather data on IDE interactions, errors, and <a href="https://rustc-dev-guide.rust-lang.org/hir.html" target="_blank" rel="noopener noreferrer"><b>HIR</b></a>
                             inferences of Rust programmers participating in our study. I am currently working on discovering which
                             programming decisions (and mistakes) correlate to learning progression in the Rust programming language!
@@ -195,15 +220,15 @@
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/goggles.svg">
-                        <p>To understand how VR users view privacy, I surveyed 40 participants to find out which circumstances meet or do not meet their privacy expectations.
+                        <p>To understand how VR users view privacy, I surveyed 40 gamers to find out which circumstances meet or do not meet their privacy expectations.
                             I found that greatest concern lies in how biometric data and third party data is handled, and those who use VR platforms more frequently have significantly lower privacy expectations than those who do only occasionally.
-                            In our WIPS title, we focused on children's privacy in gaming and VR.
+                            In our workshop paper, we focused on children's privacy in gaming and VR.
                         </p>
                     </div>
                     <div class="links title">
                         <a href="vr-privacy-youth.pdf" target="_blank" rel="noopener noreferrer">
                             <div class="box button title">
-                                <h4>Work in Progress: Privacy Protection for Children 13+ in Virtual Worlds</h4>
+                                <h4>Privacy Protection for Children 13+ in Virtual Worlds</h4>
                                 Molly Maclaren, Jared Jose, Runpeng Jian, Zheng Zeng, Jay Jhaveri, Imani N.S. Munyaka
                                 <br>
                                 <i>WIPS 2023</i>

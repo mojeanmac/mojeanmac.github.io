@@ -102,23 +102,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         .then(data => {
           const track = data.recenttracks.track[0];
           const isNowPlaying = track['@attr'] && track['@attr'].nowplaying === "true";
-          if (isNowPlaying) {
-            music.style.display = 'block';
-          } else {
-            return;
-          }
-
           const songName = track.name;
           const artistName = track.artist['#text'];
           const text = `${artistName} - ${songName}`;
           song.textContent = text;
-          if (text.length > 25) {
-          // Needs scrolling - duplicate for seamless loop
+          if (text.length > 32) {
             song.style.animation = 'marquee-content 8s linear infinite';
-          } else {
-          // Fits without scrolling
-            song.style.animation = 'none';
-            song.style.paddingLeft = '0'; // Reset padding since no scroll needed
+          }
+          if (isNowPlaying) {
+            music.style.display = 'block';
           }
         });
   } catch (error) {

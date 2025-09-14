@@ -254,13 +254,13 @@ a:active{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 650px;
+    width: 800px;
     border-radius: 40px;
     margin-bottom: 40px;
 }
 
 #marquee {
-    width: 300px;
+    width: 400px;
     white-space: nowrap;
     overflow: hidden;
     background-color: var(--hovercolor);
@@ -271,7 +271,6 @@ a:active{
 #song {
     font-family: monospace;
     display: inline-block;
-    padding-left: 100%;
 }
 
 #marquee:hover #song {
@@ -280,7 +279,7 @@ a:active{
 
 @keyframes marquee-content {
     0% {
-        transform: translateX(0);
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(-100%);

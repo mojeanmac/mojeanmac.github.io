@@ -255,15 +255,18 @@ a:active{
  }
 
 #music {
-    margin-top: -100px;
+    height: 0;
+    overflow: hidden;
     opacity: 0;
-    transition: margin-top 0.5s ease-out, opacity 0.3s ease-out;
-    margin-bottom: 40px;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-out;
 }
 
 #music.show {
-    margin-top: 0;
+    height: auto;
     opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 40px;
 }
 
 #lastfm{

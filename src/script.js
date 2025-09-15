@@ -57,13 +57,6 @@ const home = document.getElementById('home');
 const research = document.getElementById('research');
 let isInLeftZone = false;
 
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        sidebar.classList.remove('closed');
-        home.classList.remove('closed');
-    }, 500);
-});
-
 function updateSidebarVisibility() {
     const researchRect = research.getBoundingClientRect();
     const researchAtTop = researchRect.top <= 0;

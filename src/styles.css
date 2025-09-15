@@ -117,8 +117,8 @@ b {
   }
 }
 
-#name h1, h4 {
-    margin: 10px;
+#name h1, h4, p {
+    margin: 5px;
 }
 
 #name h1 {
@@ -192,6 +192,11 @@ a:active{
 
 #sideelems {
     max-width: 500px;
+}
+
+#name p {
+    text-align: center;
+    margin: 5px;
 }
 
 .stamp {

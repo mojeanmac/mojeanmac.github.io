@@ -57,6 +57,13 @@ const home = document.getElementById('home');
 const research = document.getElementById('research');
 let isInLeftZone = false;
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        sidebar.classList.remove('closed');
+        home.classList.remove('closed');
+    }, 500);
+});
+
 function updateSidebarVisibility() {
     const researchRect = research.getBoundingClientRect();
     const researchAtTop = researchRect.top <= 0;
@@ -110,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             song.style.animation = 'marquee-content 8s linear infinite';
           }
           if (isNowPlaying) {
-            music.style.display = 'block';
+            music.classList.add('show');
           }
         });
   } catch (error) {

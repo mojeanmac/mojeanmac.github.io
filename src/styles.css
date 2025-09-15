@@ -105,6 +105,9 @@ b {
     .box p {
         text-align: left !important;
     }
+    #name p{
+        text-align: center !important;
+    }
     .button {
         max-width: 90% !important;
     }
@@ -252,7 +255,15 @@ a:active{
  }
 
 #music {
-    display: none;
+    margin-top: -100px;
+    opacity: 0;
+    transition: margin-top 0.5s ease-out, opacity 0.3s ease-out;
+    margin-bottom: 40px;
+}
+
+#music.show {
+    margin-top: 0;
+    opacity: 1;
 }
 
 #lastfm{

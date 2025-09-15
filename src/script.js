@@ -77,7 +77,7 @@ function updateSidebarVisibility() {
 
 // Mouse hover sidebar
 document.addEventListener('mousemove', function(event) {
-    const leftThreshold = window.innerWidth * 0.3;
+    const leftThreshold = window.innerWidth * 0.2;
     const nowInLeftZone = event.clientX <= leftThreshold;
     
     if (nowInLeftZone !== isInLeftZone) {

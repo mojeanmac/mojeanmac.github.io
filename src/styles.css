@@ -257,16 +257,14 @@ a:active{
 #music {
     height: 0;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-150px);
     transition: all 0.5s ease-out;
 }
 
 #music.show {
     height: auto;
-    opacity: 1;
     transform: translateY(0);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #lastfm{

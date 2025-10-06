@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
           if (isNowPlaying) {
             music.classList.add('show');
+            home.classList.add('show');
           }
         });
   } catch (error) {

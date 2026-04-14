@@ -347,6 +347,23 @@ time {
     padding-top: 10px;
 }
 
+.highlight {
+  box-shadow: 0 0 15px 5px rgba(100, 70, 100, 0.5);
+}
+
+.ribbon {
+  position: absolute;
+  top: 15px; 
+  left: -30px;  
+  width: 150px;
+  color: #ffedab;
+  font-size: 28pt;
+  font-weight: bold;
+  font-family: 'notepen';
+  text-align: center;
+  transform: rotate(-25deg);
+}
+
 .box {
     width: 80%;
     margin: auto;

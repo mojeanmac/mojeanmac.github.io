@@ -21,7 +21,7 @@
                         <a class="button" href="#updates">Updates</a>
                         <a class="button" href="#blog">Blog</a>
                         <a class="button" href="#research">Research</a>
-                        <a class="button" href="#projects">Projects</a>
+                        <a class="button" href="#hobbies">Hobbies</a>
                     </div>
                 </div>
                 <div class="box" id="name">                  
@@ -38,18 +38,11 @@
                         <p>office: <a href="https://maps.app.goo.gl/wTnNbRFy4Wh3haV96" target="_blank" rel="noopener noreferrer"><b>TCS Hall</b></a> Rm 222</p>
                 </div>
                 <div class="box desc" id="about">
-                    <!-- <p> Hi, I'm Molly. Welcome to my website! I recently completed a BS in computer engineering at <a href="https://cseweb.ucsd.edu/groups/progsys/"target="_blank" rel="noopener noreferrer"><b>UCSD</b></a>
-                        and am currently a first year PhD student in software engineering with
-                        <a href="https://se-phd.s3d.cmu.edu/People/students/maclaren-molly.html" target="_blank" rel="noopener noreferrer"><b>S3D</b></a> at Carnegie Mellon University!
-                        I am interested in research that explores human factors of
-                        PL, formal verification, security, and privacy.
-                    </p> -->
                         <h4>Welcome to my website!</h4>
                         <ul>
                         <li>first year software engineering phd student @ <a href="https://s3d.cmu.edu/" target="_blank" rel="noopener noreferrer"><b>s3d at carnegie mellon</b></a></li>
                         <li>bs computer engineer @ <a href="https://cseweb.ucsd.edu/groups/progsys/"target="_blank" rel="noopener noreferrer"><b>ucsd</b></a> '25</li>
-                        <li>enjoyer of programming languages, formal methods, security, and human-computer interaction</li>
-                        <li>frequent maker of mischief</li>
+                        <li>big fan of programming languages, formal methods, systems, security, and human-computer interaction</li>
                         </ul>
                 </div>
                 <div class="nav">
@@ -76,13 +69,16 @@
                 </div>
                 <div class="content" id="news">
                     <div class="box aside">
-                        <p><time>September 2025:</time> 👩‍💻 Advisor drop! I'll be advised by Joshua Sunshine in S3D and begin working on <a href="https://borrowsanitizer.com/" target="_blank" rel="noopener noreferrer"><b>Borrow Sanitizer</b></a> with Ian McCormack!</p>
+                        <p><time>April 2026:</time> 🏆 I was awarded the <a href="https://www.nsfgrfp.org/" target="_blank" rel="noopener noreferrer"><b>NSF GRFP</b></a> Fellowship!</p>
                     </div>
                     <div class="box aside">
-                        <p><time>August 2025:</time> 🏭 I moved to Pittsburgh to start my PhD at Carnegie Mellon! TODO: buy a winter coat.</p>
+                        <p><time>September 2025:</time> 👩‍💻 I'm now advised by <a href="https://www.cs.cmu.edu/~jssunshi/" target="_blank" rel="noopener noreferrer"><b>Joshua Sunshine</b></a> in the Software and Societal Systems Dept!</p>
                     </div>
                     <div class="box aside">
-                        <p><time>May 2025:</time> ⚛️ I'm interning for a second year with the ROSE compiler group at Lawrence Livermore National Laboratory!</p>
+                        <p><time>August 2025:</time> 🏭 I moved to Pittsburgh to start my PhD at Carnegie Mellon!</p>
+                    </div>
+                    <div class="box aside">
+                        <p><time>May 2025:</time> ⚛️ I'm interning for a second year with the <a href="https://computing.llnl.gov/projects/rose-compiler" target="_blank" rel="noopener noreferrer"><b>ROSE compiler group</b></a> at the Lawrence Livermore National Laboratory!</p>
                     </div>
                     <div class="box aside">
                         <p><time>March 2025:</time> 🔱 I graduated from UCSD with a BS in computer engineering after finishing my last quarter abroad in Rome!</p>
@@ -113,8 +109,55 @@
                     <h1>Research</h1>
                 </div>
                 <div class="content">
+                    <div class="box highlight">
+                        <div class="ribbon">New!</div>
+                        <h3>Optimizing Tree Borrows</h3>
+                    </div>
+                    <div class="box desc highlight">
+                        <img src = "/src/img/tree.svg">
+                        <p>
+                            <a href="https://github.com/rust-lang/miri" target="_blank" rel="noopener noreferrer"><b>Miri</b></a>
+                            is an interpreter for Rust that checks for undefined behavior in executable programs,
+                            but it can frequently have runtime overheads of over <strong>1000x</strong> native execution.
+                            I'm collaborating with researchers at Cornell on profiling Miri and implementing
+                            <a href="https://www.ralfj.de/blog/2023/06/02/tree-borrows.html" target="_blank" rel="noopener noreferrer"><b>Tree Borrows</b></a>
+                            more efficiently.
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a class="linkbtn" href="https://github.com/cmu-cornell-for-rust" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Github
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="box highlight">
+                        <div class="ribbon">New!</div>
+                        <h3>Finding Aliasing Bugs with BorrowSanitizer</h3>
+                    </div>
+                    <div class="box desc highlight">
+                        <img src = "/src/img/soap.svg">
+                        <p>
+                            When Rust programmers write
+                            <a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html" target="_blank" rel="noopener noreferrer"><b>unsafe</b></a>
+                            code or foreign function interfaces to C/C++, their programs are vulnerable to aliasing bugs that violate Rust's safety guarantees.
+                            BorrowSanitizer is an LLVM sanitizer for finding aliasing violations to the Tree Borrows model.
+                            
+                        </p>
+                    </div>
+                    <div class="links">
+                        <a class="linkbtn" href="https://borrowsanitizer.com/" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Website
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
                     <div class="box">
-                        <h3>Programming with Paradigms in Rust</h3>
+                        <h3>Usable Programming Paradigms in Rust</h3>
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/barchart.svg">
@@ -267,9 +310,30 @@
                     </div>
                 </div>
             </div>
-            <div id="projects">
+            <div id="hobbies">
                 <div class="box heading">
-                    <h1>Projects</h1>
+                    <h1>Hobbies</h1>
+                </div>
+
+                <div class="content">
+                    <a class="hdr" href="https://wrct.org/" target="_blank" rel="noopener noreferrer">
+                        <div class="box button">
+                            <h2>WRCT</h2>
+                        </div>
+                    </a>
+                    <div class="box desc">
+                        <img src = "/src/img/wrct.png">
+                        <p> I DJ for WRCT, our free-form college radio station at Carnegie Mellon. This semester, I play a lot of dream pop and shoegaze at 3pm on Thursdays. You can find previous playlists on my <a href="https://www.wrct.org/show/303045/" target="_blank" rel="noopener noreferrer"><b>show's page</b></a>.
+                        </p>
+                    </div>
+                    <div class="box img">
+                        <img src = "/src/img/instation.jpeg">
+                    </div>
+                    <div class="box aside">
+                        <p>
+                            Me in the basement of the university center reading PSAs that tell you to ride a bike more often.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="content"> 
@@ -280,8 +344,8 @@
                     </a>
                     <div class="box desc">
                         <img src = "/src/img/cyber.svg">
-                        <p> I've been involved with running my school's cybersecurity organizations since junior year of high school!
-                            As a board member of ACM cyber at UCSD, I've organized teams for capture-the-flag (CTF) competitions in addition to hosting talks and workshops for other undergrads interested in cybersecurity.
+                        <p> During undergrad, I was involved in UCSD's cybersecurity club, ACM Cyber.
+                            As a board member, I organized teams for capture-the-flag (CTF) competitions in addition to hosting talks and workshops for other undergrads interested in cybersecurity.
                             Since 2023, I've also been writing challenges for <a href="https://sdc.tf/" target="_blank" rel="noopener noreferrer"><b>SDCTF</b></a>, UCSD's annual offensive hacking game!
                         </p>
                     </div>
@@ -296,7 +360,7 @@
                             and have to give them on one of the kiosks around campus that we pentested.
                         </p>
                     </div>
-                    <div class="box img">
+                    <!-- <div class="box img">
                         <img src="/src/img/cat.jpeg">
                     </div>
                     <div class="box aside">
@@ -304,27 +368,34 @@
                             <a href="https://github.com/acmucsd/sdctf-2024/tree/main/forensics/watch-the-waves-2" target="_blank" rel="noopener noreferrer"><b>Source</b></a> for the above challenge.
                             Also in SDCTF 2024, my <a href= "https://0xcafe.neocities.org/" target="_blank" rel="noopener noreferrer"><b>neocities site</b></a> with a secret OSINT chall.
                         </p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="content">
                     <a class="hdr" href="https://kk6uc.ucsd.edu/" target="_blank" rel="noopener noreferrer">
                         <div class="box button">
-                            <h2>KK6UC</h2>
+                            <h2>Ham Radio</h2>
                         </div>
                     </a>
                     <div class="box desc">
                         <img src = "/src/img/kk6uc.png">
-                        <p> I'm also a member of the UCSD amateur radio club, KK6UC! I've been a licensed technician since 2023 and my callsign is <strong>KN6ZWF</strong>.
-                            Some of my favorite events are the seasonal <a href="https://kk6uc.ucsd.edu/wi24-winter-field-day/" target="_blank" rel="noopener noreferrer"><b>field days</b></a>
+                        <p> I've previously been a member of UCSD's amateur radio club, KK6UC, and now you can occasionally find me on top of Hamershlag hall with
+                            <a href="https://www.w3vc.org/" target="_blank" rel="noopener noreferrer"><b>W3VC</b></a>!
+                            I've been a licensed technician since 2023, and my callsign is <strong>KN6ZWF</strong>.
+                            <!-- Some of my favorite events are the seasonal <a href="https://kk6uc.ucsd.edu/wi24-winter-field-day/" target="_blank" rel="noopener noreferrer"><b>field days</b></a>
                             and we're currently working on hosting a <a href="https://www.winlink.org/" target="_blank" rel="noopener noreferrer"><b>WinLink gateway</b></a>
-                            on our repeater and restoring our <a href="http://kiwisdr.ucsd.edu:8073/" target="_blank" rel="noopener noreferrer"><b>software-defined radio</b></a> (SDR) antenna.
+                            on our repeater and restoring our <a href="http://kiwisdr.ucsd.edu:8073/" target="_blank" rel="noopener noreferrer"><b>software-defined radio</b></a> (SDR) antenna. -->
                         </p>
                     </div>
                     <div class="box img">
-                        <img src="/src/img/operator.jpeg">
+                        <img src="/src/img/hall.png">
+                    </div>
+                    <div class="box aside">
+                        <p>
+                            You found Hamershlag!
+                        </p>
                     </div>
                 </div>
-                <div class="content">
+                <!-- <div class="content">
                     <a class="hdr" href="https://devpost.com/software/pedal-pirates" target="_blank" rel="noopener noreferrer">
                         <div class="box button">
                             <h2>Pedal Pirates</h2>
@@ -366,14 +437,13 @@
                     <div class="box img">
                         <img src="/src/img/redpitaya2.jpeg">
                     </div>
-                </div>
+                </div> -->
             </div>
             <footer>
-                <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a> <strong>++</strong> last updated Oct '25 <strong>++</strong></p>
+                <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a> <strong>++</strong> last updated April '25 <strong>++</strong></p>
                 <img src="/src/img/stamps/madoka.gif" class="stamp">
                 <img src="/src/img/stamps/computer.jpeg" class="stamp">
                 <img src="/src/img/stamps/isopod.png" class="stamp">
-                <img src="/src/img/stamps/chomp.gif" class="stamp">
             </footer>
         </div>
     </body>

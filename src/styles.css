@@ -87,13 +87,11 @@ b {
     }
     .box.img {
         width: 80% !important;
+        max-width: 500px !important;
     }
     .box.aside {
         width: 80% !important;
-    }
-    footer {
-        margin-left: 0 !important;
-        width: auto !important;
+        max-width: 450px !important;
     }
     body {
         background-size: 150%;
@@ -207,11 +205,6 @@ a:active{
 #name p {
     text-align: center;
     margin: 5px;
-}
-
-.stamp {
-    height: 56px;
-    width: 99px;
 }
 
 #home {
@@ -468,7 +461,7 @@ time {
 }
 
 footer {
-    width: 750px;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: var(--boxcolor);
     backdrop-filter: var(--blur);
@@ -485,8 +478,20 @@ footer p {
 }
 footer img {
     border-radius: 2px;
-    margin-left: 10px;
-    margin-right: 10px;
+}
+.webring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stamp {
+    height: 56px;
+    width: 99px;
+    padding: 7px;
+}
+.stamps {
+    display: flex;
+    flex-wrap: wrap;
 }
 ::-webkit-scrollbar {
     width: 0px;

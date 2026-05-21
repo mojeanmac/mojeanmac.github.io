@@ -119,7 +119,7 @@
                             <a href="https://github.com/rust-lang/miri" target="_blank" rel="noopener noreferrer"><b>Miri</b></a>
                             is an interpreter for Rust that checks for undefined behavior in executable programs,
                             but it can frequently have runtime overheads of over <strong>1000x</strong> native execution.
-                            I'm collaborating with researchers at Cornell on profiling Miri and implementing
+                            I'm collaborating with Professor <a href="https://www.cs.cornell.edu/~legunsen/" target="_blank" rel="noopener noreferrer"><b>Lengunsen</b></a>'s lab at Cornell on profiling Miri and implementing
                             <a href="https://www.ralfj.de/blog/2023/06/02/tree-borrows.html" target="_blank" rel="noopener noreferrer"><b>Tree Borrows</b></a>
                             more efficiently.
                         </p>
@@ -128,6 +128,11 @@
                         <a class="linkbtn" href="https://github.com/cmu-cornell-for-rust" target="_blank" rel="noopener noreferrer">
                             <div class="box button">
                                 Github
+                            </div>
+                        </a>
+                        <a class="linkbtn" href="lazy-alloc-report.pdf" target="_blank" rel="noopener noreferrer">
+                            <div class="box button">
+                                Preliminary Report
                             </div>
                         </a>
                     </div>
@@ -143,7 +148,7 @@
                             When Rust programmers write
                             <a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html" target="_blank" rel="noopener noreferrer"><b>unsafe</b></a>
                             code or foreign function interfaces to C/C++, their programs are vulnerable to aliasing bugs that violate Rust's safety guarantees.
-                            BorrowSanitizer is an LLVM sanitizer for finding aliasing violations to the Tree Borrows model.
+                            BorrowSanitizer is an LLVM sanitizer for finding aliasing violations using the Tree Borrows model.
                             
                         </p>
                     </div>
@@ -323,7 +328,11 @@
                     </a>
                     <div class="box desc">
                         <img src = "/src/img/wrct.png">
-                        <p> I DJ for WRCT, our free-form college radio station at Carnegie Mellon. This semester, I play a lot of dream pop and shoegaze at 3pm on Thursdays. You can find previous playlists on my <a href="https://www.wrct.org/show/303045/" target="_blank" rel="noopener noreferrer"><b>show's page</b></a>.
+                        <p> I DJ for WRCT, our free-form college radio station at Carnegie Mellon. This semester, I'm playing math rock at <strong>5pm on Thursdays</strong> at 88.3 FM or streaming on
+                            <a href="https://wrct.org/" target="_blank" rel="noopener noreferrer"><b>wrct.org</b></a>. 
+                            You can find previous playlists for my current show, <a href="https://spinitron.com/WRCT/show/307803/Discrete-Math" target="_blank" rel="noopener noreferrer"><b>discrete math</b></a>.
+                            or last semester's show,
+                            <a href="https://spinitron.com/WRCT/show/303045/ethereal-hour" target="_blank" rel="noopener noreferrer"><b>ethereal hour</b></a>.
                         </p>
                     </div>
                     <div class="box img">
@@ -441,7 +450,7 @@
             </div>
             <footer>
                 <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a></p>
-                <p>last updated April '26</p>
+                <p id="lastUpdated"></p>
                 <div class="stamps">
                 <img src="/src/img/stamps/madoka.gif" class="stamp">
                 <img src="/src/img/stamps/computer.jpeg" class="stamp">

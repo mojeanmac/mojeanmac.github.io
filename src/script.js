@@ -118,3 +118,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Error fetching LastFM data:', error);
   }
 });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await fetch(`https://api.github.com/repos/mojeanmac/mojeanmac.github.io`).then(r => r.json());
+  const days = Math.floor((Date.now() - new Date(data.pushed_at)) / 86400000);
+  text = `last updated ${days} day${days !== 1 ? 's' : ''} ago`;
+  document.getElementById('lastUpdated').textContent = text;
+});

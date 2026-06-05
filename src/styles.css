@@ -338,6 +338,11 @@ time {
 }
 .blog h4 {
     padding-top: 10px;
+    font-weight: 400;
+}
+
+.blog strong {
+    color: white;
 }
 
 .highlight {

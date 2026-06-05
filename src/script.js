@@ -32,10 +32,10 @@ async function getBsanPosts() {
       .filter(item => (item.querySelector('guid')?.textContent || '').includes('/status/'))
       .map(item => {
         const rawTitle = item.querySelector('title')?.textContent || '';
-        const title = 'BorrowSanitizer Status: ' + rawTitle
+        const title = 'BorrowSanitizer Update: <strong>' + rawTitle
           .split('_')
           .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-          .join(' ');
+          .join(' ') + '</strong>';
         const relativePath = item.querySelector('link')?.textContent || '';
         const link = 'https://borrowsanitizer.com' + relativePath;
         const pubDate = item.querySelector('pubDate')?.textContent || '';

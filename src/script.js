@@ -36,8 +36,7 @@ async function getBsanPosts() {
           .split('_')
           .map(w => w.charAt(0).toUpperCase() + w.slice(1))
           .join(' ') + '</strong>';
-        const relativePath = item.querySelector('link')?.textContent || '';
-        const link = 'https://borrowsanitizer.com' + relativePath;
+        const link = item.querySelector('link')?.textContent || '';
         const pubDate = item.querySelector('pubDate')?.textContent || '';
         return { title, link, pubDate };
       });

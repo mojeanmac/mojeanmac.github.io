@@ -1,7 +1,3 @@
-/**
- * Fetches your site’s RSS feed, pulls out the latest `n` items,
- * and returns an array of objects { title, pubDate, tags, summary, link }.
- */
 async function getLatestPosts(n = 3) {
   try {
     const res   = await fetch('/blog/index.xml');
@@ -80,33 +76,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 const sidebar = document.getElementById('sidebar');
 const home = document.getElementById('home');
 const research = document.getElementById('research');
+let lastMouseX = null;
 let isInLeftZone = false;
+
+function isOverSidebar(x) {
+    if (x === null) return false;
+    return x >= sidebar.offsetLeft && x < sidebar.offsetLeft + sidebar.offsetWidth;
+}
 
 function updateSidebarVisibility() {
     const researchRect = research.getBoundingClientRect();
     const researchAtTop = researchRect.top <= 0;
-    
-    if (!researchAtTop) {
+
+    isInLeftZone = isOverSidebar(lastMouseX);
+
+    if (!researchAtTop || isInLeftZone) {
         sidebar.classList.remove('closed');
         home.classList.remove('closed');
     } else {
-        if (isInLeftZone) {
-            sidebar.classList.remove('closed');
-            home.classList.remove('closed');
-        } else {
-            sidebar.classList.add('closed');
-            home.classList.add('closed');
-        }
+        sidebar.classList.add('closed');
+        home.classList.add('closed');
     }
 }
 
 // Mouse hover sidebar
 document.addEventListener('mousemove', function(event) {
-    const leftThreshold = window.innerWidth * 0.2;
-    const nowInLeftZone = event.clientX <= leftThreshold;
-    
-    if (nowInLeftZone !== isInLeftZone) {
-        isInLeftZone = nowInLeftZone;
+    lastMouseX = event.clientX;
+
+    if (isOverSidebar(lastMouseX) !== isInLeftZone) {
         updateSidebarVisibility();
     }
 });
@@ -147,6 +144,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   const data = await fetch(`https://api.github.com/repos/mojeanmac/mojeanmac.github.io`).then(r => r.json());
   const days = Math.floor((Date.now() - new Date(data.pushed_at)) / 86400000);
-  text = `last updated ${days} day${days !== 1 ? 's' : ''} ago`;
+  text = `(last updated ${days} day${days !== 1 ? 's' : ''} ago)`;
   document.getElementById('lastUpdated').textContent = text;
 });

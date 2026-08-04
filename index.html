@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="box" id="name">                  
-                        <img src = "/src/img/molly.png">
+                        <img src = "/src/img/png.png">
                         <h1>Molly MacLaren</h1>
                     <div id="svglinks">
                         <h4>she / her</h4>
@@ -40,7 +40,7 @@
                 <div class="box desc" id="about">
                         <h4>Welcome to my website!</h4>
                         <ul>
-                        <li>first year software engineering phd student @ <a href="https://s3d.cmu.edu/" target="_blank" rel="noopener noreferrer"><b>s3d at carnegie mellon</b></a></li>
+                        <li>second year software engineering phd student @ <a href="https://s3d.cmu.edu/" target="_blank" rel="noopener noreferrer"><b>s3d at carnegie mellon university</b></a></li>
                         <li>bs computer engineer @ <a href="https://cseweb.ucsd.edu/groups/progsys/"target="_blank" rel="noopener noreferrer"><b>ucsd</b></a> '25</li>
                         <li>big fan of programming languages, formal methods, systems, security, and human-computer interaction</li>
                         </ul>
@@ -69,6 +69,9 @@
                 </div>
                 <div class="content" id="news">
                     <div class="box aside">
+                        <p><time>August 2026:</time> 🦀 Catch me at <a href="https://rustconf.com/"target="_blank" rel="noopener noreferrer"><b>RustConf '26</b></a> in Montreal!</p>
+                    </div>
+                    <div class="box aside">
                         <p><time>April 2026:</time> 🏆 I was awarded the <a href="https://www.nsf.gov/news/nsf-announces-2026-graduate-research-fellowship-program" target="_blank" rel="noopener noreferrer"><b>NSF GRFP</b></a> Fellowship!</p>
                     </div>
                     <div class="box aside">
@@ -80,9 +83,9 @@
                     <div class="box aside">
                         <p><time>May 2025:</time> ⚛️ I'm interning for a second year with the <a href="https://computing.llnl.gov/projects/rose-compiler" target="_blank" rel="noopener noreferrer"><b>ROSE compiler group</b></a> at the Lawrence Livermore National Laboratory!</p>
                     </div>
-                    <div class="box aside">
+                    <!-- <div class="box aside">
                         <p><time>March 2025:</time> 🔱 I graduated from UCSD with a BS in computer engineering after finishing my last quarter abroad in Rome!</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div id="blog">
@@ -114,7 +117,7 @@
                         <h3>Optimizing Tree Borrows</h3>
                     </div>
                     <div class="box desc highlight">
-                        <img src = "/src/img/tree.svg">
+                        <img src = "/src/img/svgs/tree.svg">
                         <p>
                             <a href="https://github.com/rust-lang/miri" target="_blank" rel="noopener noreferrer"><b>Miri</b></a>
                             is an interpreter for Rust that checks for undefined behavior in executable programs,
@@ -140,10 +143,10 @@
                 <div class="content">
                     <div class="box highlight">
                         <div class="ribbon">New!</div>
-                        <h3>Finding Aliasing Bugs with BorrowSanitizer</h3>
+                        <h3>BorrowSanitizer: Find Bugs in Rust and C</h3>
                     </div>
                     <div class="box desc highlight">
-                        <img src = "/src/img/soap.svg">
+                        <img src = "/src/img/svgs/soap.svg">
                         <p>
                             When Rust programmers write
                             <a href="https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html" target="_blank" rel="noopener noreferrer"><b>unsafe</b></a>
@@ -165,7 +168,7 @@
                         <h3>Usable Programming Paradigms in Rust</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/barchart.svg">
+                        <img src = "/src/img/svgs/barchart.svg">
                         <p>
                             Can we use quantitative methodologies to decide which language features are idiomatic for a given programming language?
                             We designed 16 pairs of functional and imperative code snippets in Rust and conducted a code review quiz to find out which style was more readable!
@@ -185,7 +188,7 @@
                         <h3>Russet: Hardware Verification with Mealy Machines</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/potato.svg">
+                        <img src = "/src/img/svgs/potato.svg">
                         <p>
                             How can we make formal verification tools more accessible to hardware engineers?
                             Russet is a formal verification tool for VHDL that represents specifications as Mealy machine state transitions.
@@ -208,7 +211,7 @@
                         <h3>Realistic Rust Verification for Software Engineers</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/check.svg">
+                        <img src = "/src/img/svgs/check.svg">
                         <p>
                             Are automated Rust verifiers usable by programmers without a formal methods background?
                             At LLNL in summer '24,
@@ -236,7 +239,7 @@
                         <h3>Situationally Adaptive Language Tutor (SALT)</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/salt.svg">
+                        <img src = "/src/img/svgs/salt.svg">
                         <p>
                             Building on the work of <a href="https://github.com/weirane/vscode-revis" target="_blank" rel="noopener noreferrer"><b>REVIS</b></a>
                             and the error analysis study I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
@@ -262,10 +265,10 @@
                 </div>
                 <div class="content">
                     <div class="box" id="s23">
-                        <h3>Rust Compiler Error Analysis</h3>
+                        <h3>REVIS: Rust Compiler Error Analysis</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/crab.svg">
+                        <img src = "/src/img/svgs/crab.svg">
                         <p>What are the most frequent and costly errors for Rust programmers to fix, and how can we design tools to make debugging them more efficient? 
                             I analyzed 10,957 diagnostic messages recorded from students and categorized them into 1916 distinct <em>resolution sessions</em> to analyze error frequency and average time taken to resolve.
                             As a result, I found that particular <a href="https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html" target="_blank" rel="noopener noreferrer"><b>ownership</b></a> errors are among the most frequent and take longer on average to fix.
@@ -292,7 +295,7 @@
                         <h3>Privacy Perspectives in VR</h3>
                     </div>
                     <div class="box desc">
-                        <img src = "/src/img/goggles.svg">
+                        <img src = "/src/img/svgs/goggles.svg">
                         <p>To understand how VR users view privacy, I surveyed 40 gamers to find out which circumstances meet or do not meet their privacy expectations.
                             I found that greatest concern lies in how biometric data and third party data is handled, and those who use VR platforms more frequently have significantly lower privacy expectations than those who do only occasionally.
                             In our workshop paper, we focused on children's privacy in gaming and VR.
@@ -336,11 +339,11 @@
                         </p>
                     </div>
                     <div class="box img">
-                        <img src = "/src/img/instation.jpeg">
+                        <img src = "/src/img/DSC00652.JPEG">
                     </div>
                     <div class="box aside">
                         <p>
-                            Me in the basement of the university center reading PSAs that tell you to ride a bike more often.
+                            Overexposed in <i>Studio A</i> during <a href="https://www.wrct.org/2025/11/12/anatomy-of-the-ear-2025-is-here-november-14-16/"target="_blank" rel="noopener noreferrer"><b>AoTE '25</b></a>.
                         </p>
                     </div>
                 </div>
@@ -352,7 +355,7 @@
                         </div>
                     </a>
                     <div class="box desc">
-                        <img src = "/src/img/cyber.svg">
+                        <img src = "/src/img/svgs/cyber.svg">
                         <p> During undergrad, I was involved in UCSD's cybersecurity club, ACM Cyber.
                             As a board member, I organized teams for capture-the-flag (CTF) competitions in addition to hosting talks and workshops for other undergrads interested in cybersecurity.
                             Since 2023, I've also been writing challenges for <a href="https://sdc.tf/" target="_blank" rel="noopener noreferrer"><b>SDCTF</b></a>, UCSD's annual offensive hacking game!
@@ -449,13 +452,13 @@
                 </div> -->
             </div>
             <footer>
-                <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b>source</b></a></p>
-                <p id="lastUpdated"></p>
                 <div class="stamps">
                 <img src="/src/img/stamps/madoka.gif" class="stamp">
                 <img src="/src/img/stamps/computer.jpeg" class="stamp">
                 <img src="/src/img/stamps/isopod.png" class="stamp">
                 </div>
+                <p><a href="https://github.com/mojeanmac/mojeanmac.github.io" target="_blank" rel="noopener noreferrer"><b><strong>source</strong></b></a></p>
+                <p id="lastUpdated"></p>
                 <div class="webring">
                     <a href="https://kytrinh.me/ringfairy/mojeanmac/previous"><img src="/src/img/stamps/fletchl.gif"></a>
                     <a href="https://kytrinh.me/ringfairy" target="_blank" rel="noopener noreferrer"><img src="/src/img/stamps/samir.gif" width="75"></a>

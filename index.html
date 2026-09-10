@@ -40,7 +40,8 @@
                 <div class="box desc" id="about">
                         <h4>Welcome to my website!</h4>
                         <ul>
-                        <li>second year software engineering phd student @ <a href="https://s3d.cmu.edu/" target="_blank" rel="noopener noreferrer"><b>s3d at carnegie mellon university</b></a></li>
+                        <li>second year software engineering phd student @ <a href="https://s3d.cmu.edu/" target="_blank" rel="noopener noreferrer"><b>s3d at carnegie mellon university</b></a>
+                            advised by <a href="https://www.cs.cmu.edu/~jssunshi/" target="_blank" rel="noopener noreferrer"><b>Joshua Sunshine</b></a></li>
                         <li>bs computer engineer @ <a href="https://cseweb.ucsd.edu/groups/progsys/"target="_blank" rel="noopener noreferrer"><b>ucsd</b></a> '25</li>
                         <li>big fan of programming languages, formal methods, systems, security, and human-computer interaction</li>
                         </ul>
@@ -74,23 +75,11 @@
                     <div class="box aside">
                         <p><time>April 2026:</time> 🏆 I was awarded the <a href="https://www.nsf.gov/news/nsf-announces-2026-graduate-research-fellowship-program" target="_blank" rel="noopener noreferrer"><b>NSF GRFP</b></a> Fellowship!</p>
                     </div>
-                    <div class="box aside">
-                        <p><time>September 2025:</time> 👩‍💻 I'm now advised by <a href="https://www.cs.cmu.edu/~jssunshi/" target="_blank" rel="noopener noreferrer"><b>Joshua Sunshine</b></a> in the Software and Societal Systems Dept!</p>
-                    </div>
-                    <div class="box aside">
-                        <p><time>August 2025:</time> 🏭 I moved to Pittsburgh to start my PhD at Carnegie Mellon!</p>
-                    </div>
-                    <div class="box aside">
-                        <p><time>May 2025:</time> ⚛️ I'm interning for a second year with the <a href="https://computing.llnl.gov/projects/rose-compiler" target="_blank" rel="noopener noreferrer"><b>ROSE compiler group</b></a> at the Lawrence Livermore National Laboratory!</p>
-                    </div>
-                    <!-- <div class="box aside">
-                        <p><time>March 2025:</time> 🔱 I graduated from UCSD with a BS in computer engineering after finishing my last quarter abroad in Rome!</p>
-                    </div> -->
                 </div>
             </div>
             <div id="blog">
                 <div class="box heading">
-                    <h1>Blog</h1>
+                    <h1>Recent Posts</h1>
                 </div>
                 <div class="content">
                     <div id="latest-posts">
@@ -122,7 +111,7 @@
                             <a href="https://github.com/rust-lang/miri" target="_blank" rel="noopener noreferrer"><b>Miri</b></a>
                             is an interpreter for Rust that checks for undefined behavior in executable programs,
                             but it can frequently have runtime overheads of over <strong>1000x</strong> native execution.
-                            I'm collaborating with Professor <a href="https://www.cs.cornell.edu/~legunsen/" target="_blank" rel="noopener noreferrer"><b>Lengunsen</b></a>'s lab at Cornell on profiling Miri and implementing
+                            I'm collaborating with <a href="https://www.cs.cornell.edu/~legunsen/" target="_blank" rel="noopener noreferrer"><b>Owolabi Lengunsen</b></a>'s lab at Cornell on profiling Miri and implementing
                             <a href="https://www.ralfj.de/blog/2023/06/02/tree-borrows.html" target="_blank" rel="noopener noreferrer"><b>Tree Borrows</b></a>
                             more efficiently.
                         </p>
@@ -133,17 +122,12 @@
                                 Github
                             </div>
                         </a>
-                        <a class="linkbtn" href="lazy-alloc-report.pdf" target="_blank" rel="noopener noreferrer">
-                            <div class="box button">
-                                Preliminary Report
-                            </div>
-                        </a>
                     </div>
                 </div>
                 <div class="content">
                     <div class="box highlight">
                         <div class="ribbon">New!</div>
-                        <h3>BorrowSanitizer: Find Bugs in Rust and C</h3>
+                        <h3><strong>BorrowSanitizer</strong>: Find Cross-Language Bugs</h3>
                     </div>
                     <div class="box desc highlight">
                         <img src = "/src/img/svgs/soap.svg">
@@ -171,8 +155,8 @@
                         <img src = "/src/img/svgs/barchart.svg">
                         <p>
                             Can we use quantitative methodologies to decide which language features are idiomatic for a given programming language?
-                            We designed 16 pairs of functional and imperative code snippets in Rust and conducted a code review quiz to find out which style was more readable!
-                            Additionally, I analyzed 1.5 million functions from open source Rust codebases to see which features were most commonly used across different contexts.
+                            We presented pairs of functional and imperative code snippets in Rust and conducted a code review quiz to find out which style is more readable!
+                            We also analyzed 1.5 million functions from open source Rust codebases to see which features were most commonly used across different contexts.
                         </p>
                     </div>
                     <div class="links">
@@ -185,7 +169,7 @@
                 </div>
                 <div class="content">
                     <div class="box">
-                        <h3>Russet: Hardware Verification with Mealy Machines</h3>
+                        <h3><strong>Russet</strong>: Hardware Verification with Mealy Machines</h3>
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/svgs/potato.svg">
@@ -236,18 +220,16 @@
                 </div>
                 <div class="content">
                     <div class="box">
-                        <h3>Situationally Adaptive Language Tutor (SALT)</h3>
+                        <h3><strong>SALT</strong>: Situationally Adaptive Language Tutor</h3>
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/svgs/salt.svg">
                         <p>
                             Building on the work of <a href="https://github.com/weirane/vscode-revis" target="_blank" rel="noopener noreferrer"><b>REVIS</b></a>
-                            and the error analysis study I conducted over summer 2023, I designed a custom logging system for programmer actions in VS Code
+                            and the error analysis study I conducted over summer 2023, I wrote a logging system in VS Code
                             to gather data on IDE interactions, errors, and <a href="https://rustc-dev-guide.rust-lang.org/hir.html" target="_blank" rel="noopener noreferrer"><b>HIR</b></a>
-                            inferences of Rust programmers participating in our study. I am currently working on discovering which
+                            inferences of Rust programmers participating in our study. Our goal is to identify
                             programming decisions (and mistakes) correlate to learning progression in the Rust programming language!
-                            My goal is to build a tool that can provide personalized feedback to programmers based on their level of Rust expertise and background in other langs.
-
                         </p>
                     </div>
                     <div class="links">
@@ -270,7 +252,7 @@
                     <div class="box desc">
                         <img src = "/src/img/svgs/crab.svg">
                         <p>What are the most frequent and costly errors for Rust programmers to fix, and how can we design tools to make debugging them more efficient? 
-                            I analyzed 10,957 diagnostic messages recorded from students and categorized them into 1916 distinct <em>resolution sessions</em> to analyze error frequency and average time taken to resolve.
+                            I analyzed 10,957 diagnostic messages recorded from students and categorized them into 1916 distinct <em>debugging sessions</em> to analyze error frequency and average time taken to resolve.
                             As a result, I found that particular <a href="https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html" target="_blank" rel="noopener noreferrer"><b>ownership</b></a> errors are among the most frequent and take longer on average to fix.
                         </p>
                     </div>
@@ -296,8 +278,8 @@
                     </div>
                     <div class="box desc">
                         <img src = "/src/img/svgs/goggles.svg">
-                        <p>To understand how VR users view privacy, I surveyed 40 gamers to find out which circumstances meet or do not meet their privacy expectations.
-                            I found that greatest concern lies in how biometric data and third party data is handled, and those who use VR platforms more frequently have significantly lower privacy expectations than those who do only occasionally.
+                        <p>To understand how VR users view privacy, we surveyed users of "metaverse" games to find out which circumstances meet or do not meet their privacy expectations.
+                            we found that greatest concern lies in how biometric data and third party data is handled, and those who use VR platforms more frequently have significantly lower privacy expectations than those who do only occasionally.
                             In our workshop paper, we focused on children's privacy in gaming and VR.
                         </p>
                     </div>
@@ -331,10 +313,11 @@
                     </a>
                     <div class="box desc">
                         <img src = "/src/img/wrct.png">
-                        <p> I DJ for WRCT, our free-form college radio station at Carnegie Mellon. This semester, I'm playing math rock at <strong>5pm on Thursdays</strong> at 88.3 FM or streaming on
+                        <p> I DJ for WRCT, our free-form college radio station at Carnegie Mellon. This semester, I'm playing experimental and electronic music at <strong>3pm on Thursdays</strong> at 88.3 FM or streaming on
                             <a href="https://wrct.org/" target="_blank" rel="noopener noreferrer"><b>wrct.org</b></a>. 
-                            You can find previous playlists for my current show, <a href="https://spinitron.com/WRCT/show/307803/Discrete-Math" target="_blank" rel="noopener noreferrer"><b>discrete math</b></a>.
-                            or last semester's show,
+                            You can find previous playlists for my current show, <a href="https://spinitron.com/WRCT/pl/22966354/Supersoaker" target="_blank" rel="noopener noreferrer"><b>supersoaker</b></a>
+                            or playlists from previous shows, <a href="https://spinitron.com/WRCT/show/307803/Discrete-Math" target="_blank" rel="noopener noreferrer"><b>discrete math</b></a>
+                            and
                             <a href="https://spinitron.com/WRCT/show/303045/ethereal-hour" target="_blank" rel="noopener noreferrer"><b>ethereal hour</b></a>.
                         </p>
                     </div>
@@ -357,7 +340,7 @@
                     <div class="box desc">
                         <img src = "/src/img/svgs/cyber.svg">
                         <p> During undergrad, I was involved in UCSD's cybersecurity club, ACM Cyber.
-                            As a board member, I organized teams for capture-the-flag (CTF) competitions in addition to hosting talks and workshops for other undergrads interested in cybersecurity.
+                            As a board member, I organized teams for capture-the-flag (CTF) competitions. I also hosted workshops and gave talks on cybersecurity topics.
                             Since 2023, I've also been writing challenges for <a href="https://sdc.tf/" target="_blank" rel="noopener noreferrer"><b>SDCTF</b></a>, UCSD's annual offensive hacking game!
                         </p>
                     </div>
@@ -367,7 +350,7 @@
                     <div class="box aside">
                         <p>
                             Sometimes we forget to book a room for presentations 
-                            (<a href="https://acmurl.com/cyslide" target="_blank" rel="noopener noreferrer"><b>kickoff '24,</b></a>
+                            (<a href="https://acmurl.com/cyslide" target="_blank" rel="noopener noreferrer"><b>kickoff '24</b></a>,
                             <a href="https://acmurl.com/ctfs" target="_blank" rel="noopener noreferrer"><b>SDCTF '25</b></a>)
                             and have to give them on one of the kiosks around campus that we pentested.
                         </p>

@@ -28,6 +28,7 @@
         --bg: white;
         --bgimage: url("/src/img/grid.png");
         --bgrepeat: repeat;
+        --bgsizesm: 10%;
         --bgposition: center;
         --text: #514c5b;
         --link: slateblue;

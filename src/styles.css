@@ -1,8 +1,42 @@
 :root{
+    color-scheme: dark;
     --boxcolor: rgba(16, 8, 40, 0.15);
     --hovercolor: rgba(100, 70, 100, 0.4);
     --blur: saturate(180%) blur(8px);
     --border: 1px solid rgb(100, 70, 100);
+    --bg: #050110;
+    --bgimage: url("/src/img/stars.gif");
+    --bgsize: auto;
+    --bgsizesm: 150%;
+    --bgrepeat: repeat;
+    --bgposition: 0% 0%;
+    --text: white;
+    --link: skyblue;
+    --accent: #ffedab;
+    --date: pink;
+    --svgfill: white;
+    --svghover: rgb(100, 70, 100);
+    --highlight: 0 0 15px 5px rgba(100, 70, 100, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --boxcolor: rgba(255, 255, 255, 0.3);
+        --hovercolor: rgba(255, 255, 255, 0.6);
+        --border: 1px solid pink;
+        --bg: white;
+        --bgimage: url("/src/img/grid.png");
+        --bgrepeat: repeat;
+        --bgposition: center;
+        --text: #514c5b;
+        --link: slateblue;
+        --accent: rgb(100, 70, 100);
+        --date: pink;
+        --svgfill: #514c5b;
+        --svghover: rgb(100, 70, 100);
+        --highlight: 0 0 15px 5px rgb(254, 215, 221, 0.3);
+    }
 }
 
 @font-face {
@@ -11,11 +45,13 @@
 }
 
 body {
-    background-color: #050110;
-    background-image: url("/src/img/stars.gif");
-    background-repeat: repeat;
+    background-color: var(--bg);
+    background-image: var(--bgimage);
+    background-repeat: var(--bgrepeat);
+    background-size: var(--bgsize);
+    background-position: var(--bgposition);
     background-attachment: fixed;
-    color: white;
+    color: var(--text);
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
     overscroll-behavior-y: none;
@@ -40,14 +76,14 @@ p {
     font-size: 14pt;
 }
 a{
-    color: skyblue;
+    color: var(--link);
     text-decoration: none;
 }
 p a:hover, li a:hover, footer a:hover {
     text-decoration: underline;
 }
 strong {
-    color: #ffedab;
+    color: var(--accent);
     font-weight: 600;
 }
 b {
@@ -94,8 +130,8 @@ b {
         max-width: 450px !important;
     }
     body {
-        background-size: 150%;
-        background-repeat: repeat;
+        background-size: var(--bgsizesm);
+        background-repeat: var(--bgrepeat);
     }
     .box.button.title {
         width: 80% !important;
@@ -157,7 +193,7 @@ ul {
     background-color: var(--boxcolor);
     border-radius: 10px;
     padding: 10px;
-    color: #ffedab;
+    color: var(--accent);
     margin: 10px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
@@ -168,7 +204,7 @@ ul {
     transform: scale(1.05);
 }
 a:active{
-    color: white;
+    color: var(--text);
 }
 #sidebar {
     display: flex;
@@ -228,30 +264,30 @@ a:active{
     align-items: center;
 }
 #svglinks svg {
-    fill: white;
+    fill: var(--svgfill);
     margin: 7px;
     transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
 }
 #svglinks svg:hover {
-    fill: rgb(100, 70, 100);
+    fill: var(--svghover);
     transform: scale(1.1);
 
 }
 #cv {
-    color: skyblue !important;
+    color: var(--link) !important;
 }
 
 .date {
     font-size: 12pt;
-    color: pink;
+    color: var(--date);
 }
 #updates {
     margin-bottom: 40px;
 }
 
  #news time {
-    color: #ffedab;
+    color: var(--accent);
  }
 
 #music {
@@ -330,12 +366,12 @@ a:active{
     padding-left: 10px; 
 }
 .blog p {
-    color: white;
+    color: var(--text);
 }
 time {
     font-size: 18pt;
     font-family: 'notepen';
-    color: skyblue;
+    color: var(--link);
 }
 .blog h4 {
     padding-top: 10px;
@@ -343,11 +379,11 @@ time {
 }
 
 .blog strong {
-    color: white;
+    color: var(--text);
 }
 
 .highlight {
-  box-shadow: 0 0 15px 5px rgba(100, 70, 100, 0.5);
+  box-shadow: var(--highlight)
 }
 
 .ribbon {
@@ -355,7 +391,7 @@ time {
   top: 15px; 
   left: -30px;  
   width: 150px;
-  color: #ffedab;
+  color: var(--accent);
   font-size: 28pt;
   font-weight: bold;
   font-family: 'notepen';
@@ -432,7 +468,7 @@ time {
 }
 .box.title h4 {
     margin: 0;
-    color: #ffedab;
+    color: var(--accent);
 }
 .box.button.blog {
     width: 300px;
@@ -446,7 +482,7 @@ time {
     border-radius: 40px 10px 40px 10px;
     background-color: var(--boxcolor);;
     align-self: flex-start;
-    color: #ffedab;
+    color: var(--accent);
 }
 
 .box.desc {
@@ -483,6 +519,7 @@ footer {
 }
 footer p {
     font-size: 12pt;
+    color: white;
 }
 footer img {
     border-radius: 2px;

@@ -401,6 +401,7 @@ time {
 }
 
 .box {
+    display: block;
     width: 80%;
     margin: auto;
     margin-top: 10px;

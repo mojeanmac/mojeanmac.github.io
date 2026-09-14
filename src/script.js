@@ -60,12 +60,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     const isExternal = post.link.startsWith('http');
     article.innerHTML = `
-    <a href="${post.link}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
-        <div class="box button title blog">
-            <h4>${post.title}</h4>
-            <time datetime="${post.pubDate}">${date}</time>
-            ${post.summary ? `<p>${post.summary}</p>` : ''}
-        </div>
+    <a class="box button title blog" href="${post.link}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+        <h4>${post.title}</h4>
+        <time datetime="${post.pubDate}">${date}</time>
+        ${post.summary ? `<p>${post.summary}</p>` : ''}
     </a>
     `;
     container.appendChild(article);

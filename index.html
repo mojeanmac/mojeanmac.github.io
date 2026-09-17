@@ -319,6 +319,31 @@
                             <a href="https://spinitron.com/WRCT/show/303045/ethereal-hour" target="_blank" rel="noopener noreferrer"><b>ethereal hour</b></a>.
                         </p>
                     </div>
+                    <div class="box ark" id="ark" hidden>
+                        <button class="arkbtn" id="arkplay" type="button" aria-label="Play">
+                            <svg class="arkicon play" width="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 4.5l13 7.5-13 7.5z"/></svg>
+                            <svg class="arkicon pause" width="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 4.5h4.5v15H6zm7.5 0H18v15h-4.5z"/></svg>
+                        </button>
+                        <div id="arkmeta">
+                            <a id="arklabel" href="https://spinitron.com/WRCT/show/311148/Supersoaker" target="_blank" rel="noopener noreferrer">last on air</a>
+                            <span id="arkdate"></span>
+                        </div>
+                        <input class="arkrange" id="arkseek" type="range" min="0" max="3600" step="1" value="0" aria-label="Seek">
+                        <span id="arktime">0:00</span>
+                        <div id="arkvol">
+                            <button class="arkbtn" id="arkmute" type="button" aria-label="Mute">
+                                <svg class="arkicon unmuted" width="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9h3.8L11 5.2v13.6L6.8 15H3z"/>
+                                    <path d="M14.5 9.2a4 4 0 0 1 0 5.6M17.6 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                </svg>
+                                <svg class="arkicon muted" width="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9h3.8L11 5.2v13.6L6.8 15H3z"/>
+                                    <path d="M15 9.5l5.5 5.5M20.5 9.5L15 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <input class="arkrange" id="arkvolume" type="range" min="0" max="100" step="1" value="100" aria-label="Volume">
+                        </div>
+                    </div>
                     <div class="box img">
                         <img src = "/src/img/DSC00652.JPEG">
                     </div>

@@ -23,7 +23,7 @@
     :root {
         color-scheme: light;
         --boxcolor: rgba(255, 255, 255, 0.3);
-        --hovercolor: rgba(255, 255, 255, 0.6);
+        --hovercolor: white;
         --border: 1px solid pink;
         --bg: white;
         --bgimage: url("/src/img/grid.png");
@@ -129,6 +129,23 @@ b {
     .box.aside {
         width: 80% !important;
         max-width: 450px !important;
+    }
+    .box.ark {
+        width: 80% !important;
+        max-width: 450px !important;
+        flex-wrap: wrap !important;
+        gap: 6px 10px !important;
+    }
+    /* title takes its own line so the controls always fit */
+    #arkmeta {
+        flex: 1 0 100% !important;
+        order: -1 !important;
+    }
+    /* no hover on touch, so the volume slider is always out */
+    #arkvolume {
+        width: 50px !important;
+        margin-left: 8px !important;
+        opacity: 1 !important;
     }
     body {
         background-size: var(--bgsizesm);
@@ -503,6 +520,125 @@ time {
 .box.aside p {
     font-size: 12pt;
     text-align: left;
+}
+
+/* WRCT archive player */
+.box.ark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 450px;
+    padding: 10px 16px;
+    border-radius: 5px 20px 20px 20px;
+    text-align: left;
+}
+.box.ark[hidden] {
+    display: none;
+}
+.arkbtn {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: var(--border);
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--svgfill);
+    cursor: pointer;
+    transform: scale(1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.arkbtn:hover {
+    background-color: var(--hovercolor);
+    transform: scale(1.05);
+}
+.arkicon {
+    fill: currentColor;
+}
+#arkplay .play {
+    margin-left: 3px;   /* optically centre the triangle */
+}
+/* only one icon per button is ever shown */
+#arkplay .pause,
+#arkplay.playing .play,
+#arkmute .muted,
+#arkmute.muted-on .unmuted {
+    display: none;
+}
+#arkplay.playing .pause,
+#arkmute.muted-on .muted {
+    display: block;
+}
+
+#arkmeta {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+#arklabel {
+    font-family: 'notepen';
+    font-size: 18pt;
+}
+#arklabel:hover {
+    text-decoration: underline;
+}
+#arkdate {
+    font-size: 10pt;
+    color: var(--accent);
+}
+.arkrange {
+    height: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 2px;
+    background-color: var(--hovercolor);
+    cursor: pointer;
+}
+.arkrange::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+.arkrange::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+#arkseek {
+    flex: 1;
+    min-width: 40px;
+}
+/* the volume slider stays out of the way until the speaker is hovered or focused */
+#arkvol {
+    flex: none;
+    display: flex;
+    align-items: center;
+}
+#arkvolume {
+    width: 0;
+    margin-left: 0;
+    opacity: 0;
+    transition: width 0.3s ease-in-out, margin-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+#arkvol:hover #arkvolume,
+#arkvol:focus-within #arkvolume {
+    width: 60px;
+    margin-left: 8px;
+    opacity: 1;
+}
+#arktime {
+    flex: none;
+    font-size: 11pt;
+    font-variant-numeric: tabular-nums;
 }
 
 footer {

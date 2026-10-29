@@ -27,14 +27,15 @@ async function getBsanPosts() {
     return items
       .filter(item => (item.querySelector('guid')?.textContent || '').includes('/status/'))
       .map(item => {
-        const rawTitle = item.querySelector('title')?.textContent || '';
-        const title = 'BorrowSanitizer Update: <strong>' + rawTitle
-          .split('_')
-          .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-          .join(' ') + '</strong>';
         const link = item.querySelector('link')?.textContent || '';
-        const pubDate = item.querySelector('pubDate')?.textContent || '';
-        return { title, link, pubDate };
+        const slug = link.split('/').pop().replace('.html', '');
+        const [month, year] = slug.split('_');
+        const title = 'BorrowSanitizer Update: <strong>' +
+          month.charAt(0).toUpperCase() + month.slice(1) + ' ' + year + '</strong>';
+        const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
+          'august', 'september', 'october', 'november', 'december'];
+        const sortDate = new Date(Number(year), months.indexOf(month), 1);
+        return { title, link, sortDate };
       });
   } catch (err) {
     console.error('Error fetching BorrowSanitizer RSS:', err);
@@ -49,20 +50,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const [blogPosts, bsPosts] = await Promise.all([getLatestPosts(10), getBsanPosts()]);
 
   const combined = [...blogPosts, ...bsPosts]
-    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+    .sort((a, b) => (b.sortDate || new Date(b.pubDate)) - (a.sortDate || new Date(a.pubDate)))
     .slice(0, 3);
 
   combined.forEach(post => {
     const article = document.createElement('article');
     article.className = 'latest-post';
-    const date = new Date(post.pubDate).toLocaleDateString(undefined, {
+    const date = post.pubDate && new Date(post.pubDate).toLocaleDateString(undefined, {
       year: 'numeric', month: 'short', day: 'numeric'
     });
     const isExternal = post.link.startsWith('http');
     article.innerHTML = `
     <a class="box button title blog" href="${post.link}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
         <h4>${post.title}</h4>
-        <time datetime="${post.pubDate}">${date}</time>
+        ${date ? `<time datetime="${post.pubDate}">${date}</time>` : ''}
         ${post.summary ? `<p>${post.summary}</p>` : ''}
     </a>
     `;
